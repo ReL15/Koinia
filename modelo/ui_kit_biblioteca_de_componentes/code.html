@@ -1,0 +1,648 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#b8c4ff", "on-secondary-container": "#5c647a", "primary": "#00288e", "secondary-fixed": "#dae2fd", "outline-variant": "#c4c5d5", "error": "#ba1a1a", "secondary-container": "#dae2fd", "tertiary-fixed-dim": "#b4c5ff", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#173bab", "surface": "#f7f9fb", "secondary-fixed-dim": "#bec6e0", "primary-fixed-dim": "#b8c4ff", "surface-container-highest": "#e0e3e5", "background": "#f7f9fb", "on-secondary-fixed": "#131b2e", "on-secondary": "#ffffff", "on-tertiary-fixed": "#00174b", "tertiary-container": "#0042b2", "surface-dim": "#d8dadc", "on-tertiary": "#ffffff", "surface-container-high": "#e6e8ea", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "inverse-on-surface": "#eff1f3", "on-secondary-fixed-variant": "#3f465c", "on-primary": "#ffffff", "primary-container": "#1e40af", "surface-variant": "#e0e3e5", "outline": "#757684", "error-container": "#ffdad6", "on-surface-variant": "#444653", "tertiary-fixed": "#dbe1ff", "on-primary-fixed": "#001453", "tertiary": "#002e81", "primary-fixed": "#dde1ff", "surface-container-low": "#f2f4f6", "inverse-surface": "#2d3133", "on-background": "#191c1e", "on-error": "#ffffff", "on-tertiary-container": "#a4b9ff", "surface-tint": "#3755c3", "on-primary-container": "#a8b8ff", "on-tertiary-fixed-variant": "#003ea8", "surface-container": "#eceef0" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "2rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "label-md": ["Inter"], "label-caps": ["Inter"] }, fontSize: { "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "fontWeight": "400" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.625rem", "fontWeight": "400" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.06em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Logo Administración Congregación" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X_uGl3HqGdhxkgCcYp558c5bmJ9DNsTytcmCi1H2rZgmdrETcfq_GNVClJmSbm74LTRZPRQq2MUTzmiayYoGqiUVRNAhrNONY2lDJSljqH0DpRJZQSMOahkW0tvb5fuWpW9TOsVpasC7NnG0BQW3OPF2-tZynAhXpYehdMUXk9AISFXSRJFVOcjybIrNb1WTKwUoKHj6OnTGS2Nqy5rsW9nHmAYN9RZ_UFtSYWP9yajw2YIVWL7dI3ID6P"><div class="flex flex-col min-w-0 leading-tight"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Adm. Congregación</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-label-md text-label-md truncate">Congregación Central</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-xl" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-background"><div class="flex flex-col w-full">
+<!-- Header & Version Banner -->
+<div class="px-gutter-mobile pt-space-md pb-space-sm bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">dataset</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Biblioteca de Componentes</h1>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase tracking-wider">v1.0 • Ecclesia</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+      Especificación de diseño eclesiástico para administradores, directores y secretaría congregacional.
+    </p>
+<!-- Category Pills Quick Navigation (Horizontal Scrollable) -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs no-scrollbar -mx-gutter-mobile px-gutter-mobile">
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-buttons">
+<span class="material-symbols-outlined text-[16px]">smart_button</span> Botones
+      </a>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-inputs">
+<span class="material-symbols-outlined text-[16px]">edit_note</span> Formularios
+      </a>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-selection">
+<span class="material-symbols-outlined text-[16px]">check_box</span> Controles
+      </a>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-badges">
+<span class="material-symbols-outlined text-[16px]">verified</span> Badges
+      </a>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-cards">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span> Tarjetas
+      </a>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-alerts">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span> Alertas
+      </a>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md shadow-sm transition-transform active:scale-95 flex items-center gap-1.5" href="#sec-nav">
+<span class="material-symbols-outlined text-[16px]">tabs</span> Tabs
+      </a>
+</div>
+</div>
+<div class="px-gutter-mobile py-space-md flex flex-col gap-space-lg">
+<!-- SECCIÓN 1: BOTONES Y VARIANTES -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-buttons">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">1. Botones y Variantes</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">8 Estados</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Button: Primario -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Variante: Primario (`bg-primary-container`)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Acción Principal</span>
+</div>
+<button class="w-full h-[42px] px-space-md rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-95 active:scale-[0.99] transition-all flex items-center justify-center gap-space-xs" type="button">
+            Confirmar Registro de Reunión
+          </button>
+</div>
+<!-- Button: Secundario & Contorno -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Secundario Tonal</span>
+<button class="w-full h-[42px] px-space-sm rounded-xl bg-secondary-container text-on-secondary-container font-label-lg text-label-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center" type="button">
+              Guardar Borrador
+            </button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Superficie Contorno</span>
+<button class="w-full h-[42px] px-space-sm rounded-xl bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container active:scale-[0.98] transition-all flex items-center justify-center" type="button">
+              Cancelar
+            </button>
+</div>
+</div>
+<!-- Button: Destructivo & Ghost -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Destructivo Soft</span>
+<button class="w-full h-[42px] px-space-sm rounded-xl bg-error-container text-on-error-container font-label-lg text-label-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span> Eliminar
+            </button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Texto / Ghost</span>
+<button class="w-full h-[42px] px-space-sm rounded-xl text-primary font-label-lg text-label-lg hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center justify-center" type="button">
+              Ver Historial
+            </button>
+</div>
+</div>
+<!-- Button: Con Iconos (Izq / Der) -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Con Iconografía Contextual</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="w-full h-[42px] px-space-sm rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg shadow-sm flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span> Añadir Miembro
+            </button>
+<button class="w-full h-[42px] px-space-sm rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg shadow-sm flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+              Exportar <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Button: Solo Icono & Deshabilitado & Cargando -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Solo Icono, Deshabilitado &amp; Spinner de Carga</span>
+<div class="flex flex-wrap items-center justify-between gap-2">
+  <!-- Icon buttons -->
+  <div class="flex items-center gap-space-xs">
+    <button aria-label="Descargar" class="w-10 h-10 rounded-xl bg-surface-container text-on-surface flex items-center justify-center shadow-sm active:scale-90 transition-transform" type="button">
+      <span class="material-symbols-outlined text-[20px]">download</span>
+    </button>
+    <button aria-label="Imprimir" class="w-10 h-10 rounded-xl bg-surface-container text-on-surface flex items-center justify-center shadow-sm active:scale-90 transition-transform" type="button">
+      <span class="material-symbols-outlined text-[20px]">print</span>
+    </button>
+    <button aria-label="Compartir" class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-90 transition-transform" type="button">
+      <span class="material-symbols-outlined text-[20px]">share</span>
+    </button>
+  </div>
+  <div class="flex items-center gap-2 flex-wrap">
+    <!-- Disabled -->
+    <button class="h-10 px-3 rounded-xl bg-surface-container text-outline opacity-60 font-label-md text-label-md cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+      <span class="material-symbols-outlined text-[16px]">lock</span> Bloqueado
+    </button>
+    <!-- Loading Spinner State Refinado -->
+    <button class="h-10 px-3.5 rounded-xl bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-2 cursor-wait shadow-xs active:scale-[0.99] transition-all" type="button">
+      <svg class="animate-spin h-4 w-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+      </svg>
+      <span class="font-medium text-primary">Sincronizando...</span>
+    </button>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 2: CAMPOS DE ENTRADA Y FORMULARIOS -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-inputs">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-tertiary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">2. Formularios y Entradas</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Inputs Estandarizados</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Input Estándar -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span class="">Nombre de la Congregación</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Requerido</span>
+</label>
+<div class="relative w-full">
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:shadow-md outline-none transition-all" placeholder="Ej: Congregación Central El Valle" type="text">
+</div>
+</div>
+<!-- Input con Icono Frontal -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Búsqueda de Registros Eclesiásticos</label>
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" type="text" value="Familia Morales">
+<button aria-label="Limpiar campo" class="absolute right-3 text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+</div>
+<!-- Input Simulado Enfocado / Activo -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary font-medium flex items-center gap-1">
+<span class="">Correo Electrónico Oficial</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+</label>
+<div class="relative w-full">
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-md outline-none" type="email" value="pastoral@ecclesia.org">
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dirección institucional verificada</span>
+</div>
+<!-- Input con Error -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-error">Fecha de Ordenación / Bautismo</label>
+<span class="font-label-caps text-label-caps text-error">Formato no válido</span>
+</div>
+<div class="relative w-full flex items-center">
+<input class="w-full h-11 px-3.5 rounded-xl bg-error-container/40 text-on-surface font-body-md text-body-md outline-none" type="text" value="31/02/2024">
+<span class="material-symbols-outlined absolute right-3 text-error text-[20px]">error</span>
+</div>
+<span class="font-body-sm text-body-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span> Por favor ingrese un día válido del calendario gregoriano (DD/MM/AAAA).
+          </span>
+</div>
+<!-- Input Contraseña con Toggle Visual Interactivo -->
+<div class="flex flex-col gap-1" id="demo-password-wrapper">
+<label class="font-label-md text-label-md text-on-surface">Clave de Acceso al Libro Sacramental</label>
+<div class="relative w-full flex items-center">
+<input class="w-full h-11 pl-3.5 pr-11 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" id="demo-password-field" type="password" value="Benedictio2025#">
+<button aria-label="Mostrar u ocultar contraseña" class="absolute right-3 text-on-surface-variant hover:text-primary transition-colors" id="demo-password-toggle" type="button">
+<span class="material-symbols-outlined text-[20px]" id="demo-password-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Textarea Multilínea -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Notas Pastorales y Observaciones</label>
+<textarea class="w-full p-3.5 rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md resize-none outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" placeholder="Redacte apuntes sobre la reunión del presbiterio o solicitud de asistencia..." rows="3"></textarea>
+<div class="flex justify-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">0 / 500 caracteres</span>
+</div>
+</div>
+<!-- Selector Select / Dropdown Simulado -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Rol Eclesiástico Asignado</label>
+<div class="relative w-full flex items-center">
+<select aria-label="Rol Eclesiástico Asignado" class="appearance-none w-full h-11 pl-3.5 pr-10 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all">
+<option value="1">Anciano / Pastor Principal</option>
+<option selected="" value="2">Siervo Ministerial / Diácono</option>
+<option value="3">Precursor Regular</option>
+<option value="4">Encargado de Cuentas y Tesorería</option>
+<option value="5">Coordinador de Escuela Dominical</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 3: CONTROLES DE SELECCIÓN -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-selection">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-secondary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">3. Controles de Selección</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Toggles &amp; Switches</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Checkboxes -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Casillas de Verificación (Checkboxes)</span>
+<div class="flex flex-col gap-space-xs pt-1">
+<!-- Checked -->
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="w-5 h-5 rounded-md bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<span class="font-body-md text-body-md text-on-surface flex-1">Bautismo en agua registrado (Marcado)</span>
+</label>
+<!-- Indeterminate -->
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="w-5 h-5 rounded-md bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</span>
+<span class="font-body-md text-body-md text-on-surface flex-1">Documentación pastoral parcial (Indeterminado)</span>
+</label>
+<!-- Unchecked -->
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="w-5 h-5 rounded-md bg-surface-container-high shadow-sm"></span>
+<span class="font-body-md text-body-md text-on-surface-variant flex-1">Transferencia de carta requerida (Desmarcado)</span>
+</label>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<!-- Radios -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Botones de Radio (Opciones Excluyentes)</span>
+<div class="flex flex-col gap-space-xs pt-1">
+<!-- Selected Radio -->
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Asistencia Presencial</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Salón Principal de Congregación</span>
+</div>
+</label>
+<!-- Unselected Radio -->
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="w-5 h-5 rounded-full bg-surface-container-high"></span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Transmisión Virtual Remota</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Enlace privado de videoconferencia</span>
+</div>
+</label>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<!-- Switches / Toggles -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Interruptores (Switches)</span>
+<div class="flex flex-col gap-space-sm pt-1">
+<!-- Switch Active -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-2">
+<span class="font-label-md text-label-md text-on-surface">Notificaciones por Mensajería</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Envío automático de recordatorios semanales</span>
+</div>
+<button aria-label="Desactivar notificaciones" class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end shadow-sm transition-colors" type="button">
+<span class="w-6 h-6 rounded-full bg-on-primary shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-primary">check</span>
+</span>
+</button>
+</div>
+<!-- Switch Inactive -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-2">
+<span class="font-label-md text-label-md text-on-surface">Modo Confidencial de Diezmos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ocultar montos nominativos en pantalla</span>
+</div>
+<button aria-label="Activar modo confidencial" class="w-12 h-7 rounded-full bg-surface-container-highest p-0.5 flex items-center justify-start shadow-sm transition-colors" type="button">
+<span class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 4: BADGES, CHIPS Y ESTADOS -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-badges">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-surface-tint rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">4. Badges, Chips y Estados</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Taxonomía</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Estados Operativos y Administrativos</span>
+<div class="flex flex-wrap gap-2 pt-1">
+<!-- Activo -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Activo
+            </span>
+<!-- Pendiente -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-900 font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> Pendiente de Carta
+            </span>
+<!-- Inactivo / Baja -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-800 font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-rose-600"></span> Inactivo / Baja
+            </span>
+<!-- En Revisión -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px]">history</span> En Revisión
+            </span>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Designaciones Eclesiásticas</span>
+<div class="flex flex-wrap gap-2 pt-1">
+<!-- Precursor Regular -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px]">workspace_premium</span> Precursor Regular
+            </span>
+<!-- Siervo Ministerial -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px]">shield</span> Siervo Ministerial
+            </span>
+<!-- Anciano / Presbítero -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px]">account_balance</span> Anciano
+            </span>
+<!-- Ministro de Alabanza -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px]">music_note</span> Alabanza
+            </span>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Chips Interactivos de Filtro</span>
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="px-3 py-1 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-sm flex items-center gap-1" type="button">
+<span class="">Grupo 04</span>
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="px-3 py-1 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high flex items-center gap-1" type="button">
+<span class="">Bautizados 2024</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="px-3 py-1 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high flex items-center gap-1" type="button">
+<span class="">Jóvenes</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 5: TARJETAS Y SUPERFICIES -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-cards">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">5. Tarjetas y Superficies</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Estructuras</span>
+</div>
+<!-- KPI Card Especializada (Ofrendas y Asistencia) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block">KPI Sacrificial • Mensual</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ofrendas &amp; Fondo Local</h3>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-label-caps text-label-caps">
+            +8.4%
+          </span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-bold tracking-tight">$ 14,850.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Meta: $ 13,500</span>
+</div>
+<!-- Attendance / Fund Progress Bar -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden mt-1">
+<div class="bg-primary-container h-full rounded-full w-[84%]"></div>
+</div>
+<div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span class="">84% ejecutado con éxito</span>
+<span class="">Cierre: 30 Nov</span>
+</div>
+</div>
+<!-- Tarjeta de Miembro / Elemento de Lista Complejo -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<img class="w-12 h-12 rounded-xl object-cover shadow-sm" data-alt="Fotografía de retrato pastoral formal de un hermano miembro de la congregación con vestimenta pulcra y expresión cálida sobre fondo neutro de estudio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb1RIAR_yoiDG79JU_WgklhqRqOXts_6uV_dWbzNNvkGUHcOmt4tpJH9VQ-avT5RJ74YsApWpFtnZcbKD_ugS8oroqS9qQUxRKByVeuL-JbTbKJGg1WQKkVhbXR4BtPGIjDc285j7bQGM6RTGz2ZICMod_zoz3hm1jQfaXG7NK3jBIwlmMyndcEegLvRUAzlOxRHSO_Iwyb5PM0Yg8e4N8d_PgoKtd2tSE0vs0lEfK5Z3EXdbYlVBXQA">
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-600 ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">David S. Alarcón</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">david.alarcon@ecclesia.org</span>
+<span class="font-label-caps text-label-caps text-primary mt-0.5">Grupo N° 2 • Servicio Dominical</span>
+</div>
+</div>
+<button aria-label="Menú de opciones de miembro" class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">event</span>
+<span class="">Última Asistencia: Ayer</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-lowest text-on-surface shadow-xs font-label-caps text-label-caps font-semibold">
+            Diácono
+          </span>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 6: ALERTAS, BANNERS Y NOTIFICACIONES -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-alerts">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-tertiary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">6. Alertas y Banners de Aviso</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Retroalimentación</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Info Alert -->
+<div class="p-space-md rounded-xl bg-secondary-container text-on-secondary-container shadow-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">info</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-secondary-container font-semibold">Asamblea Administrativa Programada</span>
+<p class="font-body-sm text-body-sm text-on-secondary-container/90 mt-0.5">
+              Se convocará al cuerpo de ancianos el próximo sábado a las 09:00 hrs para revisión de actas y libro de membresía.
+            </p>
+</div>
+</div>
+<!-- Success Alert -->
+<div class="p-space-md rounded-xl bg-emerald-50 text-emerald-900 shadow-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-emerald-700 text-[22px] flex-shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-emerald-900 font-semibold">Libro de Bautismos Actualizado</span>
+<p class="font-body-sm text-body-sm text-emerald-800 mt-0.5">
+              Se registraron 12 nuevas partidas eclesiásticas con firma de los testigos y copia digital archivada con éxito.
+            </p>
+</div>
+</div>
+<!-- Warning Alert -->
+<div class="p-space-md rounded-xl bg-amber-50 text-amber-950 shadow-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-amber-700 text-[22px] flex-shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-amber-950 font-semibold">Cartas de Traslado Pendientes</span>
+<p class="font-body-sm text-body-sm text-amber-900 mt-0.5">
+              Hay 3 miembros solicitando recepción formal sin respuesta de la congregación de procedencia desde hace 15 días.
+            </p>
+</div>
+</div>
+<!-- Destructive / Error Banner -->
+<div class="p-space-md rounded-xl bg-error-container text-on-error-container shadow-sm flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-error text-[22px] flex-shrink-0 mt-0.5">crisis_alert</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-error-container font-semibold">Error de Sincronización en la Nube</span>
+<p class="font-body-sm text-body-sm text-on-error-container/90 mt-0.5">
+                No se pudo respaldar el registro de tesorería local. Verifique su conexión y reintente.
+              </p>
+</div>
+</div>
+<button aria-label="Reintentar respaldo" class="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-error font-label-md text-label-md flex-shrink-0 shadow-sm hover:opacity-90" type="button">
+            Reintentar
+          </button>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 7: PAGINACIÓN Y TABS -->
+<section class="flex flex-col gap-space-sm scroll-mt-20" id="sec-nav">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary-fixed-dim rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">7. Paginación, Tabs &amp; Segmentos</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Navegación Local</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Segmented Control 3 Opciones -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Segmented Control (Selector de Período)</span>
+<div class="p-1 rounded-xl bg-surface-container-high flex items-center justify-between">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs text-center font-semibold" type="button">
+              Semanal
+            </button>
+<button class="flex-1 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center" type="button">
+              Mensual
+            </button>
+<button class="flex-1 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center" type="button">
+              Anual
+            </button>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<!-- Tab Bar Pills (Horizontal) -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Barra de Pestañas de Vista (Pills)</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm" type="button">
+              Todos (312)
+            </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">
+              Varones
+            </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">
+              Mujeres
+            </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">
+              Niños
+            </button>
+</div>
+</div>
+<div class="h-[1px] bg-surface-container"></div>
+<!-- Paginación Numérica Compacta Móvil -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Controles de Paginación Numérica</span>
+<div class="flex items-center justify-between pt-1">
+<button aria-label="Página anterior" class="w-9 h-9 rounded-xl bg-surface-container text-on-surface flex items-center justify-center shadow-sm disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center font-bold shadow-xs" type="button">
+                1
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high" type="button">
+                2
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high" type="button">
+                3
+              </button>
+<span class="font-body-sm text-body-sm text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high" type="button">
+                18
+              </button>
+</div>
+<button aria-label="Página siguiente" class="w-9 h-9 rounded-xl bg-surface-container text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container-high active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<div class="text-center mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando registros 1-20 de 356</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer de Documentación & Guía Rápida -->
+<div class="p-space-md rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">architecture</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Sistema de Diseño Ecclesia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Diseñado con tokens semánticos oficiales</span>
+</div>
+</div>
+<button aria-label="Volver arriba" class="w-9 h-9 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm active:scale-90 transition-transform" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function initUIKitInteractions() {
+    // Password toggle micro-interaction
+    const pwToggle = document.getElementById('demo-password-toggle');
+    const pwField = document.getElementById('demo-password-field');
+    const pwIcon = document.getElementById('demo-password-icon');
+
+    if (pwToggle && pwField && pwIcon) {
+      pwToggle.addEventListener('click', function() {
+        const isPassword = pwField.type === 'password';
+        pwField.type = isPassword ? 'text' : 'password';
+        pwIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+
+    // Segmented control pill active states
+    const segmentedButtons = document.querySelectorAll('#sec-nav .p-1 button');
+    segmentedButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        segmentedButtons.forEach(b => {
+          b.className = 'flex-1 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center transition-all';
+        });
+        this.className = 'flex-1 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs text-center font-semibold transition-all';
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-medium"><div class="h-16 px-space-xs grid grid-cols-5 items-center"><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Inicio</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="personas" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Personas</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="reuniones" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Reuniones</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="informes" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Informes</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ui-kit" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">UI Kit</span></a></div></nav>
+
+</body></html>

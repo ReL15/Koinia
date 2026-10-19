@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Evitar deformación de SVGs, marcadores y mosaicos de Leaflet causada por los resets de Tailwind CSS */
+.leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-container svg {
+  max-width: none !important;
+  max-height: none !important;
+  display: block;
+}
+
+.leaflet-pane svg {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-tile {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Reglas de impresión limpias para evitar hojas en blanco */
+@media print {
+  @page {
+    size: portrait;
+    margin: 10mm;
+  }
+  .print-hidden,
+  .print\:hidden {
+    display: none !important;
+  }
+  .print\:inline {
+    display: inline !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+}
+

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#b8c4ff", "on-secondary-container": "#5c647a", "primary": "#00288e", "secondary-fixed": "#dae2fd", "outline-variant": "#c4c5d5", "error": "#ba1a1a", "secondary-container": "#dae2fd", "tertiary-fixed-dim": "#b4c5ff", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#173bab", "surface": "#f7f9fb", "secondary-fixed-dim": "#bec6e0", "primary-fixed-dim": "#b8c4ff", "surface-container-highest": "#e0e3e5", "background": "#f7f9fb", "on-secondary-fixed": "#131b2e", "on-secondary": "#ffffff", "on-tertiary-fixed": "#00174b", "tertiary-container": "#0042b2", "surface-dim": "#d8dadc", "on-tertiary": "#ffffff", "surface-container-high": "#e6e8ea", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "inverse-on-surface": "#eff1f3", "on-secondary-fixed-variant": "#3f465c", "on-primary": "#ffffff", "primary-container": "#1e40af", "surface-variant": "#e0e3e5", "outline": "#757684", "error-container": "#ffdad6", "on-surface-variant": "#444653", "tertiary-fixed": "#dbe1ff", "on-primary-fixed": "#001453", "tertiary": "#002e81", "primary-fixed": "#dde1ff", "surface-container-low": "#f2f4f6", "inverse-surface": "#2d3133", "on-background": "#191c1e", "on-error": "#ffffff", "on-tertiary-container": "#a4b9ff", "surface-tint": "#3755c3", "on-primary-container": "#a8b8ff", "on-tertiary-fixed-variant": "#003ea8", "surface-container": "#eceef0" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "2rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "label-md": ["Inter"], "label-caps": ["Inter"] }, fontSize: { "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "fontWeight": "400" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.625rem", "fontWeight": "400" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.06em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Logo Administración Congregación" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X_uGl3HqGdhxkgCcYp558c5bmJ9DNsTytcmCi1H2rZgmdrETcfq_GNVClJmSbm74LTRZPRQq2MUTzmiayYoGqiUVRNAhrNONY2lDJSljqH0DpRJZQSMOahkW0tvb5fuWpW9TOsVpasC7NnG0BQW3OPF2-tZynAhXpYehdMUXk9AISFXSRJFVOcjybIrNb1WTKwUoKHj6OnTGS2Nqy5rsW9nHmAYN9RZ_UFtSYWP9yajw2YIVWL7dI3ID6P"/><div class="flex flex-col min-w-0 leading-tight"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Adm. Congregación</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-label-md text-label-md truncate">Congregación Central</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-xl" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-background"><div class="flex flex-col w-full pb-6">
+<!-- Header de Sección -->
+<div class="px-gutter-mobile pt-space-md pb-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight truncate">Directorio de Personas</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
+        84 miembros registrados
+      </p>
+</div>
+<button class="h-10 px-3 bg-primary-container hover:bg-tertiary-container active:scale-95 transition-all rounded-xl text-on-primary flex items-center gap-1.5 shadow-sm flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span class="font-label-lg text-label-lg whitespace-nowrap">Agregar</span>
+</button>
+</div>
+<!-- Barra de Búsqueda y Filtro Accionable -->
+<div class="px-gutter-mobile py-space-xs flex items-center gap-space-sm">
+<div class="relative flex-1 min-w-0 bg-surface-container-lowest rounded-xl shadow-sm flex items-center">
+<span class="material-symbols-outlined text-outline ml-3 text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-2.5 pr-8 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none" id="directorySearch" placeholder="Buscar por nombre, grupo o rol..." type="text"/>
+<button class="hidden absolute right-2.5 text-outline hover:text-on-surface p-1" id="clearSearch" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<button aria-label="Abrir filtros avanzados" class="relative w-11 h-11 bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-all flex-shrink-0" id="openFilterBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+<!-- Carrusel de Filtros Rápidos (Chips) -->
+<div class="w-full overflow-x-auto py-2.5 px-gutter-mobile no-scrollbar flex items-center gap-2">
+<button class="filter-chip active flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button">
+      Todos (84)
+    </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+      Publicadores (72)
+    </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+      Precursores (12)
+    </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+      Grupos 1 al 6
+    </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+      Inactivos (0)
+    </button>
+</div>
+<!-- Tarjetas de Miembros -->
+<div class="px-gutter-mobile flex flex-col gap-space-sm mt-1">
+<!-- Tarjeta 1: Mateo Gómez -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-3.5 transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0 font-semibold shadow-inner">
+            MG
+          </div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Mateo Gómez</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+                Publicador bautizado
+              </span>
+</div>
+</div>
+</div>
+<button aria-label="Opciones de Mateo Gómez" class="w-8 h-8 rounded-lg text-outline hover:text-on-surface flex items-center justify-center hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">groups</span>
+<span class="truncate">Grupo 2</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">call</span>
+<span class="truncate">+34 600 000 001</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          Reunión al día
+        </span>
+<button class="h-8 px-3.5 bg-surface-container-low hover:bg-surface-container text-primary-container font-label-lg text-label-lg rounded-lg transition-colors flex items-center gap-1" type="button">
+<span>Ver ficha</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta 2: Lucía Ramírez -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-3.5 transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0 font-semibold shadow-inner">
+            LR
+          </div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Lucía Ramírez</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-caps text-label-caps uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[12px]">award_star</span>
+                Precursora regular
+              </span>
+</div>
+</div>
+</div>
+<button aria-label="Opciones de Lucía Ramírez" class="w-8 h-8 rounded-lg text-outline hover:text-on-surface flex items-center justify-center hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">groups</span>
+<span class="truncate">Grupo 1</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">mail</span>
+<span class="truncate">ejemplo@correo.org</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">schedule</span>
+          52 hrs reportadas
+        </span>
+<button class="h-8 px-3.5 bg-surface-container-low hover:bg-surface-container text-primary-container font-label-lg text-label-lg rounded-lg transition-colors flex items-center gap-1" type="button">
+<span>Ver ficha</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta 3: Carlos Silva -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-3.5 transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0 font-semibold shadow-inner">
+            CS
+          </div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Carlos Silva</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps uppercase tracking-wider font-semibold">
+                Siervo Ministerial
+              </span>
+</div>
+</div>
+</div>
+<button aria-label="Opciones de Carlos Silva" class="w-8 h-8 rounded-lg text-outline hover:text-on-surface flex items-center justify-center hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">groups</span>
+<span class="truncate">Grupo 4</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">assignment_ind</span>
+<span class="truncate">Audio &amp; Video</span>
+</div>
+</div>
+<!-- Indicador de Asistencia con Progress Bar -->
+<div class="pt-1 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<span>Asistencia regular</span>
+<span class="font-semibold text-primary-container">98%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 98%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-end pt-0.5">
+<button class="h-8 px-3.5 bg-surface-container-low hover:bg-surface-container text-primary-container font-label-lg text-label-lg rounded-lg transition-colors flex items-center gap-1" type="button">
+<span>Ver ficha</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta 4: Elena Reyes -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-3.5 transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0 font-semibold shadow-inner">
+            ER
+          </div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Elena Reyes</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+                Publicadora no bautizada
+              </span>
+</div>
+</div>
+</div>
+<button aria-label="Opciones de Elena Reyes" class="w-8 h-8 rounded-lg text-outline hover:text-on-surface flex items-center justify-center hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">groups</span>
+<span class="truncate">Grupo 3</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">calendar_today</span>
+<span class="truncate">Alta: Ene 2024</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Conduce 1 estudio
+        </span>
+<button class="h-8 px-3.5 bg-surface-container-low hover:bg-surface-container text-primary-container font-label-lg text-label-lg rounded-lg transition-colors flex items-center gap-1" type="button">
+<span>Ver ficha</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Paginación Visual Inferior -->
+<div class="px-gutter-mobile mt-space-md flex items-center justify-between bg-surface-container-lowest rounded-xl p-3 shadow-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+      Mostrando <span class="font-semibold text-on-surface">1 - 4</span> de <span class="font-semibold text-on-surface">84</span>
+</span>
+<div class="flex items-center gap-1.5">
+<button aria-label="Página anterior" class="w-8 h-8 rounded-lg bg-surface-container text-outline cursor-not-allowed flex items-center justify-center" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded font-label-md text-label-md bg-primary-fixed text-on-primary-fixed font-semibold">1</span>
+<button aria-label="Página siguiente" class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Barra Rápida / Pill Flotante para Filtrar por Grupo -->
+<div class="px-gutter-mobile mt-space-md">
+<div class="w-full bg-gradient-to-r from-surface-container-lowest to-surface-container-low p-3.5 rounded-xl shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">filter_alt</span>
+</div>
+<div class="flex flex-col min-w-0 leading-tight">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Filtro Rápido de Grupo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Selecciona para filtrar la lista</span>
+</div>
+</div>
+<button class="h-9 px-3 bg-surface-container-highest hover:bg-surface-dim text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-1 flex-shrink-0 transition-all" id="openGroupDrawerBtn" type="button">
+<span>Grupos 1-6</span>
+<span class="material-symbols-outlined text-[16px]">expand_less</span>
+</button>
+</div>
+</div>
+<!-- Drawer Modal Flotante: Selección de Grupos (Inicialmente Oculto) -->
+<div class="hidden fixed inset-0 z-50 flex flex-col justify-end" id="groupDrawer">
+<!-- Backdrop con transición suave -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="drawerBackdrop"></div>
+<!-- Contenido del Bottom Sheet -->
+<div class="relative w-full bg-surface-container-lowest rounded-t-2xl shadow-xl p-space-md flex flex-col gap-space-sm max-h-[707px] overflow-y-auto">
+<div class="w-10 h-1 bg-surface-container-high rounded-full self-center mb-1"></div>
+<div class="flex items-center justify-between pb-1">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Grupos de Servicio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Filtrar publicadores por asignación</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="closeDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<button class="group-btn flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-secondary-container transition-colors text-left" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Grupo 1</span>
+<span class="font-label-md text-label-md text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-lowest">14</span>
+</button>
+<button class="group-btn flex items-center justify-between p-3 rounded-xl bg-secondary-container text-on-secondary-fixed text-left ring-1 ring-primary/20" type="button">
+<span class="font-label-lg text-label-lg font-semibold">Grupo 2</span>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container-lowest text-primary-container font-semibold">15</span>
+</button>
+<button class="group-btn flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-secondary-container transition-colors text-left" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Grupo 3</span>
+<span class="font-label-md text-label-md text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-lowest">13</span>
+</button>
+<button class="group-btn flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-secondary-container transition-colors text-left" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Grupo 4</span>
+<span class="font-label-md text-label-md text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-lowest">16</span>
+</button>
+<button class="group-btn flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-secondary-container transition-colors text-left" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Grupo 5</span>
+<span class="font-label-md text-label-md text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-lowest">12</span>
+</button>
+<button class="group-btn flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-secondary-container transition-colors text-left" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-medium">Grupo 6</span>
+<span class="font-label-md text-label-md text-on-surface-variant px-2 py-0.5 rounded bg-surface-container-lowest">14</span>
+</button>
+</div>
+<div class="flex gap-2 pt-2 pb-safe">
+<button class="flex-1 h-11 bg-surface-container text-on-surface font-label-lg text-label-lg rounded-xl transition-all" id="resetGroupFilter" type="button">
+          Restablecer
+        </button>
+<button class="flex-1 h-11 bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl shadow-sm transition-all" id="applyGroupFilter" type="button">
+          Aplicar Filtro
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    // Interacción simple del Drawer de Grupos
+    const openDrawerBtn = document.getElementById('openGroupDrawerBtn');
+    const openFilterBtn = document.getElementById('openFilterBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerBackdrop = document.getElementById('drawerBackdrop');
+    const groupDrawer = document.getElementById('groupDrawer');
+    const applyGroupFilter = document.getElementById('applyGroupFilter');
+    const resetGroupFilter = document.getElementById('resetGroupFilter');
+
+    function toggleDrawer(show) {
+      if (!groupDrawer) return;
+      if (show) {
+        groupDrawer.classList.remove('hidden');
+      } else {
+        groupDrawer.classList.add('hidden');
+      }
+    }
+
+    if (openDrawerBtn) openDrawerBtn.addEventListener('click', () => toggleDrawer(true));
+    if (openFilterBtn) openFilterBtn.addEventListener('click', () => toggleDrawer(true));
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', () => toggleDrawer(false));
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', () => toggleDrawer(false));
+    if (applyGroupFilter) applyGroupFilter.addEventListener('click', () => toggleDrawer(false));
+    if (resetGroupFilter) resetGroupFilter.addEventListener('click', () => toggleDrawer(false));
+
+    // Búsqueda interactiva con botón para limpiar
+    const searchInput = document.getElementById('directorySearch');
+    const clearBtn = document.getElementById('clearSearch');
+
+    if (searchInput && clearBtn) {
+      searchInput.addEventListener('input', (e) => {
+        if (e.target.value.trim().length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        searchInput.focus();
+      });
+    }
+
+    // Toggle visual de chips
+    const chips = document.querySelectorAll('.filter-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        chip.classList.add('bg-primary-container', 'text-on-primary');
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-medium"><div class="h-16 px-space-xs grid grid-cols-5 items-center"><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Inicio</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 h-12 transition-colors text-primary-container font-medium" data-path="personas" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Personas</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="reuniones" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Reuniones</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="informes" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Informes</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ui-kit" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">UI Kit</span></a></div></nav></body></html>

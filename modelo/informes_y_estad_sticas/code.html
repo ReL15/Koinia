@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#b8c4ff", "on-secondary-container": "#5c647a", "primary": "#00288e", "secondary-fixed": "#dae2fd", "outline-variant": "#c4c5d5", "error": "#ba1a1a", "secondary-container": "#dae2fd", "tertiary-fixed-dim": "#b4c5ff", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#173bab", "surface": "#f7f9fb", "secondary-fixed-dim": "#bec6e0", "primary-fixed-dim": "#b8c4ff", "surface-container-highest": "#e0e3e5", "background": "#f7f9fb", "on-secondary-fixed": "#131b2e", "on-secondary": "#ffffff", "on-tertiary-fixed": "#00174b", "tertiary-container": "#0042b2", "surface-dim": "#d8dadc", "on-tertiary": "#ffffff", "surface-container-high": "#e6e8ea", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "inverse-on-surface": "#eff1f3", "on-secondary-fixed-variant": "#3f465c", "on-primary": "#ffffff", "primary-container": "#1e40af", "surface-variant": "#e0e3e5", "outline": "#757684", "error-container": "#ffdad6", "on-surface-variant": "#444653", "tertiary-fixed": "#dbe1ff", "on-primary-fixed": "#001453", "tertiary": "#002e81", "primary-fixed": "#dde1ff", "surface-container-low": "#f2f4f6", "inverse-surface": "#2d3133", "on-background": "#191c1e", "on-error": "#ffffff", "on-tertiary-container": "#a4b9ff", "surface-tint": "#3755c3", "on-primary-container": "#a8b8ff", "on-tertiary-fixed-variant": "#003ea8", "surface-container": "#eceef0" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "2rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "label-md": ["Inter"], "label-caps": ["Inter"] }, fontSize: { "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "fontWeight": "400" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.625rem", "fontWeight": "400" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.06em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Logo Administración Congregación" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X_uGl3HqGdhxkgCcYp558c5bmJ9DNsTytcmCi1H2rZgmdrETcfq_GNVClJmSbm74LTRZPRQq2MUTzmiayYoGqiUVRNAhrNONY2lDJSljqH0DpRJZQSMOahkW0tvb5fuWpW9TOsVpasC7NnG0BQW3OPF2-tZynAhXpYehdMUXk9AISFXSRJFVOcjybIrNb1WTKwUoKHj6OnTGS2Nqy5rsW9nHmAYN9RZ_UFtSYWP9yajw2YIVWL7dI3ID6P"/><div class="flex flex-col min-w-0 leading-tight"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Adm. Congregación</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-label-md text-label-md truncate">Congregación Central</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-xl" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Month Selector & Quick Actions -->
+<section class="px-gutter-mobile pt-space-md pb-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center bg-surface-container-low rounded-xl px-space-xs py-1 shadow-sm">
+<button aria-label="Mes anterior" class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors active:scale-95" id="prev-month-btn">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<div class="px-space-sm text-center min-w-[130px]">
+<span class="font-label-lg text-label-lg text-on-surface select-none" id="current-month-label">Septiembre 2024</span>
+</div>
+<button aria-label="Mes siguiente" class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors active:scale-95" id="next-month-btn">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<div class="relative">
+<button class="h-9 px-space-sm bg-surface-container-low text-primary-container rounded-lg flex items-center gap-space-xs font-label-md text-label-md shadow-sm active:scale-95 hover:bg-surface-container transition-all" id="export-btn">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar</span>
+</button>
+<!-- Mini export modal/dropdown simulation -->
+<div class="hidden absolute right-0 mt-1 w-40 bg-surface-container-lowest rounded-xl shadow-xl p-1 z-30" id="export-menu">
+<button class="w-full text-left px-space-sm py-2 text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-error">picture_as_pdf</span>
+<span>Descargar PDF</span>
+</button>
+<button class="w-full text-left px-space-sm py-2 text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">table_view</span>
+<span>Planilla Excel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Executive Greeting / Subheading -->
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Estadísticas y Cierre</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Revisión consolidada mensual para secretaría</p>
+</div>
+<span class="px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-secondary-container text-on-secondary-container">
+        EN CURSO
+      </span>
+</div>
+</section>
+<!-- KPI Grid 2x2 -->
+<section class="px-gutter-mobile py-space-xs">
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Publicadores</span>
+<span class="w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[15px]">people</span>
+</span>
+</div>
+<div class="flex items-baseline gap-1 my-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">84</span>
+<span class="font-label-caps text-label-caps text-on-primary-fixed-variant bg-primary-fixed px-1 py-0.2 rounded">+1.2%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Activos este mes</span>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Asistencia Prom.</span>
+<span class="w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[15px]">meeting_room</span>
+</span>
+</div>
+<div class="flex items-baseline gap-1 my-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">92</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">asist.</span>
+</div>
+<div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>Pres. 72%</span>
+<span>Virt. 28%</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Informes</span>
+<span class="w-6 h-6 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[15px]">assignment_turned_in</span>
+</span>
+</div>
+<div class="flex items-baseline gap-1 my-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">79</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 84</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden mt-1 mb-1">
+<div class="bg-primary-container h-full rounded-full" style="width: 94%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-error-container bg-error-container px-1 py-0.5 rounded text-center">5 pendientes</span>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Horas Totales</span>
+<span class="w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+</span>
+</div>
+<div class="flex items-baseline gap-1 my-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">412</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">hrs</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Precursores reg. y aux.</span>
+</div>
+</div>
+</section>
+<!-- Interactive Graphic: Weekly Attendance Comparison -->
+<section class="px-gutter-mobile py-space-xs mt-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Asistencia por Semana</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparativa Entre semana vs. Fin de semana</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span> Sem.
+          </span>
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary-fixed-dim"></span> F.D.S.
+          </span>
+</div>
+</div>
+<!-- SVG Minimal Bar Chart -->
+<div class="w-full pt-2">
+<svg aria-label="Gráfica de barras comparativa" class="w-full h-32 overflow-visible" viewbox="0 0 320 130">
+<!-- Guide lines -->
+<line class="text-surface-container" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="320" y1="20" y2="20"></line>
+<line class="text-surface-container" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="320" y1="65" y2="65"></line>
+<line class="text-surface-container-high" stroke="currentColor" x1="0" x2="320" y1="110" y2="110"></line>
+<!-- Week 1 -->
+<rect class="fill-primary-container" height="72" rx="3" width="16" x="24" y="38"></rect>
+<rect class="fill-tertiary-fixed-dim" height="86" rx="3" width="16" x="44" y="24"></rect>
+<text class="fill-on-surface-variant text-[10px] font-medium font-sans" text-anchor="middle" x="42" y="125">Sem 1</text>
+<!-- Week 2 -->
+<rect class="fill-primary-container" height="66" rx="3" width="16" x="100" y="44"></rect>
+<rect class="fill-tertiary-fixed-dim" height="92" rx="3" width="16" x="120" y="18"></rect>
+<text class="fill-on-surface-variant text-[10px] font-medium font-sans" text-anchor="middle" x="118" y="125">Sem 2</text>
+<!-- Week 3 -->
+<rect class="fill-primary-container" height="78" rx="3" width="16" x="176" y="32"></rect>
+<rect class="fill-tertiary-fixed-dim" height="82" rx="3" width="16" x="196" y="28"></rect>
+<text class="fill-on-surface-variant text-[10px] font-medium font-sans" text-anchor="middle" x="194" y="125">Sem 3</text>
+<!-- Week 4 -->
+<rect class="fill-primary-container" height="70" rx="3" width="16" x="252" y="40"></rect>
+<rect class="fill-tertiary-fixed-dim" height="95" rx="3" width="16" x="272" y="15"></rect>
+<text class="fill-on-surface-variant text-[10px] font-medium font-sans" text-anchor="middle" x="270" y="125">Sem 4</text>
+</svg>
+</div>
+<!-- Attendance detail chips -->
+<div class="mt-space-sm pt-space-xs flex justify-around bg-surface-container-low rounded-lg p-2 text-center">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block">Media Entre Semana</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">82 asist.</span>
+</div>
+<div class="w-px bg-outline-variant h-6 self-center"></div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block">Media Fin de Semana</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">98 asist.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Distribution by Service Groups -->
+<section class="px-gutter-mobile py-space-xs mt-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface">Publicadores por Grupo</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">6 grupos</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Group 1 -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant w-14">Grup. 1</span>
+<div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 90%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface w-10 text-right">15 pub</span>
+</div>
+<!-- Group 2 -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant w-14">Grup. 2</span>
+<div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 82%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface w-10 text-right">14 pub</span>
+</div>
+<!-- Group 3 -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant w-14">Grup. 3</span>
+<div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 95%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface w-10 text-right">16 pub</span>
+</div>
+<!-- Group 4 -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant w-14">Grup. 4</span>
+<div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 75%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface w-10 text-right">13 pub</span>
+</div>
+<!-- Group 5 -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant w-14">Grup. 5</span>
+<div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface w-10 text-right">13 pub</span>
+</div>
+<!-- Group 6 -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant w-14">Grup. 6</span>
+<div class="flex-1 bg-surface-container rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 80%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface w-10 text-right">13 pub</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pending Reports with Reminder Triggers -->
+<section class="px-gutter-mobile py-space-xs mt-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error">pending_actions</span>
+<h3 class="font-label-lg text-label-lg text-on-surface">Informes Pendientes</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-error-container text-on-error-container">
+          5 FALTANTES
+        </span>
+</div>
+<div class="flex flex-col gap-space-sm" id="pending-list">
+<!-- Person 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-9 h-9 rounded-full object-cover flex-shrink-0" data-alt="Retrato formal en primer plano de un hombre adulto sonriente con camisa azul clara y corbata en un ambiente sobrio y profesional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB85rnntTawe-EsbldvqreRg6lhhdLBXv2ZCu5jKCWDIwJD7it1p3zEW3N5AOwRnEi_kM0wBdxfnecaM29KHcuC7ED-oPBu8dVNRRVvgXJ3pRGJvKZajeMK-AuWvxeQodkqEM0KZ4QXMG1OKrJAeDB8ep9gpDrx4pPT7UeajhrgPFVogxvU06HpiKhzCqPWOzNQBypcMasjjp3bYeFFw8hI_TX5pcLQd2RWgxeVFZ-_IsVqcu2Qd_iJcA"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Mateo Morales Vega</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Grupo 2 • Publicador</p>
+</div>
+</div>
+<button class="px-space-sm h-8 rounded-lg bg-secondary-container text-on-secondary-container hover:bg-surface-container transition-all text-label-md font-label-md flex items-center gap-1 active:scale-95 flex-shrink-0" onclick="sendReminder(this, 'Mateo')">
+<span class="material-symbols-outlined text-[15px]">send</span>
+<span>Aviso</span>
+</button>
+</div>
+<!-- Person 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-9 h-9 rounded-full object-cover flex-shrink-0" data-alt="Fotografía de retrato sereno de una mujer joven con cabello recogido y vestimenta elegante en tonos pastel en un interior luminoso." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYBzOIiWNVhgNWdqSGcIR-sGgv-gVEwg067MS6meqhws105tV1Ry3c9Wdkv0Qec7b8mfapGJzl7XBgkf2-Huxb9ZRCm8iAxQhtBBA9nRH48qUteqWlmxiw78JjCrPDcePEwTAomGabzntH2sYOlOLLR4FJV9EXUQTuRH2W7ekh-_Uf2gG0tulfxbdHNf3xcsFcu2pD2SdnY0AY89OVudAIQaJwSRNFDx5Kr5DpSWcuLVaUDr5oV0G7mw"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Elena Gómez Navarro</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Grupo 4 • Precursora Auxiliar</p>
+</div>
+</div>
+<button class="px-space-sm h-8 rounded-lg bg-secondary-container text-on-secondary-container hover:bg-surface-container transition-all text-label-md font-label-md flex items-center gap-1 active:scale-95 flex-shrink-0" onclick="sendReminder(this, 'Elena')">
+<span class="material-symbols-outlined text-[15px]">send</span>
+<span>Aviso</span>
+</button>
+</div>
+<!-- Person 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-9 h-9 rounded-full object-cover flex-shrink-0" data-alt="Retrato de un hombre de mediana edad con gafas y traje oscuro en un salón institucional bien iluminado con fondo desenfocado." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV4MbrczMLJT-J8rqubxl1_71htMqEmjC5lmIz3CUgyCpLxbcWL2ewhngkdiyID90c6QU79Yxm7MQBJbUVuWvdRA6O17oquz7G87njf2_k0hy6Bmgw-T1geBc2HKg1W2Hv0gr1hDRgnfgqLd_rRyPvpSJmJ5ycR8TRvA_CpBwywlXKWBnLe4Uy-SiW_1STAJ3c-Tr_NkyK5zo_B_Nfwhi9tem57Mtg3VLvjDp3e-izsvLD3eCeZqh11g"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">David Sánchez Ríos</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Grupo 5 • Publicador</p>
+</div>
+</div>
+<button class="px-space-sm h-8 rounded-lg bg-secondary-container text-on-secondary-container hover:bg-surface-container transition-all text-label-md font-label-md flex items-center gap-1 active:scale-95 flex-shrink-0" onclick="sendReminder(this, 'David')">
+<span class="material-symbols-outlined text-[15px]">send</span>
+<span>Aviso</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 text-center text-primary-container font-label-md text-label-md hover:bg-surface-container-low rounded-lg transition-colors" id="show-more-pending">
+        Ver los 2 restantes
+      </button>
+</div>
+</section>
+<!-- Publisher Categories Breakdown -->
+<section class="px-gutter-mobile py-space-xs mt-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Desglose por Categoría</h3>
+<div class="flex flex-col divide-y-0 gap-space-sm">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Precursores Regulares</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">8 miembros asignados</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">344 hrs</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">43 h/prom</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Precursores Auxiliares</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">3 inscritos este mes</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">68 hrs</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">22.6 h/prom</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Publicadores de Congregación</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">73 informaron participación</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Activo</span>
+<span class="block font-body-sm text-body-sm text-on-primary-fixed-variant">100% partic.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Administrative Closure Action Buttons -->
+<section class="px-gutter-mobile pt-space-sm pb-space-lg flex flex-col gap-space-sm">
+<button class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98] transition-all" id="close-report-btn">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+<span>Cerrar Informe Mensual</span>
+</button>
+<button class="w-full h-11 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98] transition-all" id="send-branch-btn">
+<span class="material-symbols-outlined text-[20px] text-primary-container">send_and_archive</span>
+<span>Enviar Copia a Sucursal</span>
+</button>
+</section>
+<!-- Toast Notification System -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full font-label-md text-label-md shadow-xl flex items-center gap-2 transition-all opacity-0 pointer-events-none transform translate-y-3" id="toast">
+<span class="material-symbols-outlined text-[18px] text-inverse-primary" id="toast-icon">check_circle</span>
+<span id="toast-msg">Acción completada</span>
+</div>
+</div>
+<script>
+  // Export Dropdown micro-interaction
+  const exportBtn = document.getElementById('export-btn');
+  const exportMenu = document.getElementById('export-menu');
+
+  if (exportBtn && exportMenu) {
+    exportBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      exportMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      exportMenu.classList.add('hidden');
+    });
+  }
+
+  // Toast Helper
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const toastIcon = document.getElementById('toast-icon');
+    if (!toast || !toastMsg) return;
+
+    toastMsg.textContent = message;
+    if (toastIcon) toastIcon.textContent = icon;
+
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2800);
+  }
+
+  // Month navigation simulation
+  const months = ['Julio 2024', 'Agosto 2024', 'Septiembre 2024', 'Octubre 2024'];
+  let currentMonthIdx = 2;
+  const monthLabel = document.getElementById('current-month-label');
+  const prevBtn = document.getElementById('prev-month-btn');
+  const nextBtn = document.getElementById('next-month-btn');
+
+  if (prevBtn && nextBtn && monthLabel) {
+    prevBtn.addEventListener('click', () => {
+      if (currentMonthIdx > 0) {
+        currentMonthIdx--;
+        monthLabel.textContent = months[currentMonthIdx];
+        showToast(`Cargando ${months[currentMonthIdx]}...`, 'sync');
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentMonthIdx < months.length - 1) {
+        currentMonthIdx++;
+        monthLabel.textContent = months[currentMonthIdx];
+        showToast(`Cargando ${months[currentMonthIdx]}...`, 'sync');
+      }
+    });
+  }
+
+  // Quick Reminder Interaction
+  window.sendReminder = function(button, name) {
+    button.disabled = true;
+    button.innerHTML = '<span class="material-symbols-outlined text-[14px]">done</span> Enviado';
+    button.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+    button.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+    showToast(`Recordatorio enviado a ${name}`, 'notifications_active');
+  };
+
+  // Administrative action handlers
+  const closeReportBtn = document.getElementById('close-report-btn');
+  if (closeReportBtn) {
+    closeReportBtn.addEventListener('click', () => {
+      showToast('Consolidado de Septiembre verificado y cerrado', 'lock');
+    });
+  }
+
+  const sendBranchBtn = document.getElementById('send-branch-btn');
+  if (sendBranchBtn) {
+    sendBranchBtn.addEventListener('click', () => {
+      showToast('Informe transmitido exitosamente a la sucursal', 'mark_email_read');
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-medium"><div class="h-16 px-space-xs grid grid-cols-5 items-center"><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Inicio</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="personas" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Personas</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="reuniones" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Reuniones</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="informes" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Informes</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ui-kit" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">UI Kit</span></a></div></nav></body></html>

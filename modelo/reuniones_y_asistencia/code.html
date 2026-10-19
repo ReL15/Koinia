@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#b8c4ff", "on-secondary-container": "#5c647a", "primary": "#00288e", "secondary-fixed": "#dae2fd", "outline-variant": "#c4c5d5", "error": "#ba1a1a", "secondary-container": "#dae2fd", "tertiary-fixed-dim": "#b4c5ff", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#173bab", "surface": "#f7f9fb", "secondary-fixed-dim": "#bec6e0", "primary-fixed-dim": "#b8c4ff", "surface-container-highest": "#e0e3e5", "background": "#f7f9fb", "on-secondary-fixed": "#131b2e", "on-secondary": "#ffffff", "on-tertiary-fixed": "#00174b", "tertiary-container": "#0042b2", "surface-dim": "#d8dadc", "on-tertiary": "#ffffff", "surface-container-high": "#e6e8ea", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "inverse-on-surface": "#eff1f3", "on-secondary-fixed-variant": "#3f465c", "on-primary": "#ffffff", "primary-container": "#1e40af", "surface-variant": "#e0e3e5", "outline": "#757684", "error-container": "#ffdad6", "on-surface-variant": "#444653", "tertiary-fixed": "#dbe1ff", "on-primary-fixed": "#001453", "tertiary": "#002e81", "primary-fixed": "#dde1ff", "surface-container-low": "#f2f4f6", "inverse-surface": "#2d3133", "on-background": "#191c1e", "on-error": "#ffffff", "on-tertiary-container": "#a4b9ff", "surface-tint": "#3755c3", "on-primary-container": "#a8b8ff", "on-tertiary-fixed-variant": "#003ea8", "surface-container": "#eceef0" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "2rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Inter"], "body-sm": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "label-md": ["Inter"], "label-caps": ["Inter"] }, fontSize: { "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "fontWeight": "400" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.625rem", "fontWeight": "400" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-caps": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.06em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Logo Administración Congregación" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X_uGl3HqGdhxkgCcYp558c5bmJ9DNsTytcmCi1H2rZgmdrETcfq_GNVClJmSbm74LTRZPRQq2MUTzmiayYoGqiUVRNAhrNONY2lDJSljqH0DpRJZQSMOahkW0tvb5fuWpW9TOsVpasC7NnG0BQW3OPF2-tZynAhXpYehdMUXk9AISFXSRJFVOcjybIrNb1WTKwUoKHj6OnTGS2Nqy5rsW9nHmAYN9RZ_UFtSYWP9yajw2YIVWL7dI3ID6P"/><div class="flex flex-col min-w-0 leading-tight"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Adm. Congregación</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="font-label-md text-label-md truncate">Congregación Central</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-xl" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-background"><div class="flex flex-col w-full pb-24">
+<div class="px-gutter-mobile pt-space-md space-y-space-md">
+<!-- Segmented Meeting Type Selector -->
+<div class="bg-surface-container-high p-space-xs rounded-xl flex items-center shadow-sm">
+<button class="flex-1 py-2 px-space-xs rounded-lg bg-surface-container-lowest text-primary-container shadow-sm flex flex-col items-center justify-center transition-all duration-200" id="tab-entre-semana" onclick="switchMeetingTab('entre-semana')" type="button">
+<span class="font-label-lg text-label-lg leading-tight">Entre Semana</span>
+<span class="font-label-md text-label-md opacity-80 truncate">Vida y Ministerio</span>
+</button>
+<button class="flex-1 py-2 px-space-xs rounded-lg text-secondary flex flex-col items-center justify-center transition-all duration-200" id="tab-fin-semana" onclick="switchMeetingTab('fin-semana')" type="button">
+<span class="font-label-lg text-label-lg leading-tight">Fin de Semana</span>
+<span class="font-label-md text-label-md opacity-80 truncate">Público y Atalaya</span>
+</button>
+</div>
+<!-- Date Navigator Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<button aria-label="Fecha anterior" class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors active:scale-95" onclick="changeDate(-1)" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<div class="flex flex-col items-center text-center px-space-xs min-w-0">
+<div class="flex items-center gap-1.5 text-primary-container">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-label-lg text-label-lg text-on-surface" id="current-date-label">Jueves, 12 de Octubre</span>
+</div>
+<span class="font-label-md text-label-md text-secondary" id="current-time-label">19:30 h • Turno Oficial</span>
+</div>
+<button aria-label="Fecha siguiente" class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors active:scale-95" onclick="changeDate(1)" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Live Attendance Overview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-container"></span>
+</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Conteo en Vivo</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-md text-label-md">Reunión en curso</span>
+</div>
+<!-- Main Totals Banner -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-secondary block">Total Asistencia</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-primary-container font-bold tabular-nums" id="stat-total">92</span>
+<span class="font-label-md text-label-md text-secondary">presentes</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+</div>
+<!-- Breakdown Metrics -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface p-space-sm rounded-lg flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">meeting_room</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-secondary block truncate">Presencial</span>
+<span class="font-headline-md text-headline-md text-on-surface tabular-nums" id="stat-presencial">68</span>
+</div>
+</div>
+<div class="bg-surface p-space-sm rounded-lg flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-secondary block truncate">Videoconf.</span>
+<span class="font-headline-md text-headline-md text-on-surface tabular-nums" id="stat-remoto">24</span>
+</div>
+</div>
+</div>
+<!-- Comparison Progress Bar -->
+<div class="space-y-1.5 pt-space-xs">
+<div class="flex items-center justify-between text-label-md font-label-md">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Media mensual: 90
+          </span>
+<span class="text-primary-container font-semibold">102% alcanzado</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full transition-all duration-300" id="progress-bar-presencial" style="width: 74%;"></div>
+<div class="bg-secondary-fixed-dim h-full transition-all duration-300" id="progress-bar-remoto" style="width: 26%;"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-secondary pt-0.5">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span> Auditorio (68)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary-fixed-dim inline-block"></span> Conexión Remota (24)</span>
+</div>
+</div>
+</div>
+<!-- Quick Section Registration -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Registro Rápido por Secciones</h2>
+<span class="font-label-md text-label-md text-secondary">Ajuste instantáneo</span>
+</div>
+<!-- Counter: Auditorio Principal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">chair</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Auditorio Principal</span>
+<span class="font-body-sm text-body-sm text-secondary">Presencial • Asientos fila 1 a 14</span>
+</div>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tabular-nums" id="val-auditorio">56</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg active:bg-surface-container transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auditorio', -5)" type="button">-5</button>
+<button class="h-11 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg active:bg-surface-container transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auditorio', -1)" type="button">-1</button>
+<button class="h-11 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg active:opacity-90 transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auditorio', 1)" type="button">+1</button>
+<button class="h-11 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg active:opacity-90 transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auditorio', 5)" type="button">+5</button>
+</div>
+</div>
+<!-- Counter: Sala Auxiliar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">door_sliding</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Sala Auxiliar 2</span>
+<span class="font-body-sm text-body-sm text-secondary">Presencial • Zona de desborde</span>
+</div>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tabular-nums" id="val-auxiliar">12</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg active:bg-surface-container transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auxiliar', -5)" type="button">-5</button>
+<button class="h-11 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg active:bg-surface-container transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auxiliar', -1)" type="button">-1</button>
+<button class="h-11 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg active:opacity-90 transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auxiliar', 1)" type="button">+1</button>
+<button class="h-11 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg active:opacity-90 transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('auxiliar', 5)" type="button">+5</button>
+</div>
+</div>
+<!-- Counter: Conexión Remota (Zoom) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">laptop_chromebook</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Dispositivos Remotos</span>
+<span class="font-body-sm text-body-sm text-secondary">Conectados por videoconferencia</span>
+</div>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-semibold tabular-nums" id="val-remoto">24</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg active:bg-surface-container transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('remoto', -5)" type="button">-5</button>
+<button class="h-11 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg active:bg-surface-container transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('remoto', -1)" type="button">-1</button>
+<button class="h-11 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:opacity-90 transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('remoto', 1)" type="button">+1</button>
+<button class="h-11 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:opacity-90 transition-transform active:scale-95 flex items-center justify-center" onclick="modifyCount('remoto', 5)" type="button">+5</button>
+</div>
+</div>
+</div>
+<!-- Congregational Visual Snapshot (Atmosphere) -->
+<div class="relative rounded-xl overflow-hidden shadow-sm h-32 flex items-end p-space-md">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Warm and modern auditorium interior of a peaceful congregation during an evening meeting, soft clean ambient lighting with warm timber wall panels and orderly comfortable blue seating, dignified quiet ecclesiastical atmosphere" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdoeM_gCfRU2317-o8LDLyDY3qnDboC4Er2msQa2qhCN2qTBA9RsFBGebRDaB9_ZRzsjMvZvEbNGBG8RnmIXFG2UT2ory_UNM67hq8nPscV_wQLCkiTpvEzYUxFIIBpInEQFh_g2oZlibobj8Cx-h5_xxjQ7-bEPNcTIX0u68lJMm1x8D6YEa4JdIweLS9IK1LeEz3drejNuRM89HV4gs6TsOrCChrRDfDh4bfHrOFv1kH64gBSKNxMA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary-fixed block">Supervisión en Sala</span>
+<span class="font-label-lg text-label-lg text-inverse-on-surface">Acomodadores Asignados: 3</span>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest/20 backdrop-blur-md text-inverse-on-surface font-label-md text-label-md active:bg-surface-container-lowest/30 transition-colors" onclick="alert('Acomodadores en turno: Hno. Martínez, Hno. Ruiz, Hno. Castro')" type="button">
+          Ver Turnos
+        </button>
+</div>
+</div>
+<!-- Recent History Section -->
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Historial Reciente</h2>
+<a class="font-label-md text-label-md text-primary-container font-semibold" href="#">Ver todo</a>
+</div>
+<div class="space-y-space-xs">
+<!-- History Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-on-surface">
+<span class="font-label-caps text-label-caps uppercase text-secondary">DOM</span>
+<span class="font-label-lg text-label-lg font-bold">08</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Fin de Semana</span>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm">
+<span>72 Presencial</span>
+<span>•</span>
+<span>26 Remoto</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface tabular-nums">98</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps uppercase font-bold">Informe enviado</span>
+</div>
+</div>
+<!-- History Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-on-surface">
+<span class="font-label-caps text-label-caps uppercase text-secondary">JUE</span>
+<span class="font-label-lg text-label-lg font-bold">05</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Entre Semana</span>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm">
+<span>65 Presencial</span>
+<span>•</span>
+<span>22 Remoto</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface tabular-nums">87</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps uppercase font-bold">Informe enviado</span>
+</div>
+</div>
+<!-- History Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-on-surface">
+<span class="font-label-caps text-label-caps uppercase text-secondary">DOM</span>
+<span class="font-label-lg text-label-lg font-bold">01</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Fin de Semana (Especial)</span>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm">
+<span>79 Presencial</span>
+<span>•</span>
+<span>28 Remoto</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface tabular-nums">107</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-label-caps text-label-caps uppercase font-bold">Pendiente cierre</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Notes & Observations Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-xs">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<label class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant" for="meeting-notes">Notas u Observaciones del Secretario</label>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-space-sm text-on-surface font-body-md text-body-md placeholder-secondary focus:outline-none focus:bg-surface-container transition-colors resize-none" id="meeting-notes" placeholder="Ej: Visita de superintendente, fallas en la conexión remota durante 5 min..." rows="2"></textarea>
+</div>
+</div>
+<!-- Bottom Sticky Action Bar (Safely above app tabbar) -->
+<div class="sticky bottom-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl px-gutter-mobile py-space-sm shadow-[0_-4px_16px_rgba(0,0,0,0.06)] mt-space-md">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Restablecer contadores" class="h-12 w-12 rounded-xl bg-surface-container-low text-secondary hover:text-on-surface flex items-center justify-center active:scale-95 transition-transform flex-shrink-0" onclick="resetCounts()" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+<button class="h-12 flex-1 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" id="btn-save-attendance" onclick="saveAndCloseAttendance()" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Guardar y Cerrar Asistencia</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  let counts = {
+    auditorio: 56,
+    auxiliar: 12,
+    remoto: 24
+  };
+
+  const dates = [
+    { label: "Jueves, 05 de Octubre", time: "19:30 h • Turno Oficial" },
+    { label: "Domingo, 08 de Octubre", time: "10:30 h • Turno Matutino" },
+    { label: "Jueves, 12 de Octubre", time: "19:30 h • Turno Oficial" },
+    { label: "Domingo, 15 de Octubre", time: "10:30 h • Turno Matutino" }
+  ];
+  let currentDateIndex = 2;
+
+  function updateDisplay() {
+    const presencial = counts.auditorio + counts.auxiliar;
+    const total = presencial + counts.remoto;
+
+    document.getElementById('val-auditorio').textContent = counts.auditorio;
+    document.getElementById('val-auxiliar').textContent = counts.auxiliar;
+    document.getElementById('val-remoto').textContent = counts.remoto;
+
+    document.getElementById('stat-presencial').textContent = presencial;
+    document.getElementById('stat-remoto').textContent = counts.remoto;
+    document.getElementById('stat-total').textContent = total;
+
+    // Progress bar distribution
+    if (total > 0) {
+      const pPercent = Math.round((presencial / total) * 100);
+      const rPercent = 100 - pPercent;
+      document.getElementById('progress-bar-presencial').style.width = pPercent + '%';
+      document.getElementById('progress-bar-remoto').style.width = rPercent + '%';
+    }
+  }
+
+  function modifyCount(type, delta) {
+    if (counts[type] + delta >= 0) {
+      counts[type] += delta;
+      updateDisplay();
+    }
+  }
+
+  function resetCounts() {
+    if (confirm("¿Deseas reiniciar los contadores de la sesión actual?")) {
+      counts.auditorio = 0;
+      counts.auxiliar = 0;
+      counts.remoto = 0;
+      updateDisplay();
+    }
+  }
+
+  function switchMeetingTab(type) {
+    const tabEntre = document.getElementById('tab-entre-semana');
+    const tabFin = document.getElementById('tab-fin-semana');
+    const timeLabel = document.getElementById('current-time-label');
+
+    if (type === 'entre-semana') {
+      tabEntre.className = "flex-1 py-2 px-space-xs rounded-lg bg-surface-container-lowest text-primary-container shadow-sm flex flex-col items-center justify-center transition-all duration-200";
+      tabFin.className = "flex-1 py-2 px-space-xs rounded-lg text-secondary flex flex-col items-center justify-center transition-all duration-200";
+      timeLabel.textContent = "19:30 h • Turno Oficial";
+    } else {
+      tabFin.className = "flex-1 py-2 px-space-xs rounded-lg bg-surface-container-lowest text-primary-container shadow-sm flex flex-col items-center justify-center transition-all duration-200";
+      tabEntre.className = "flex-1 py-2 px-space-xs rounded-lg text-secondary flex flex-col items-center justify-center transition-all duration-200";
+      timeLabel.textContent = "10:30 h • Turno Matutino";
+    }
+  }
+
+  function changeDate(step) {
+    currentDateIndex = (currentDateIndex + step + dates.length) % dates.length;
+    document.getElementById('current-date-label').textContent = dates[currentDateIndex].label;
+    document.getElementById('current-time-label').textContent = dates[currentDateIndex].time;
+  }
+
+  function saveAndCloseAttendance() {
+    const btn = document.getElementById('btn-save-attendance');
+    const total = counts.auditorio + counts.auxiliar + counts.remoto;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Guardando...</span>`;
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.className = "h-12 flex-1 rounded-xl bg-secondary-container text-on-secondary-container font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm transition-all";
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span><span>¡Registro Guardado (${total})!</span>`;
+      setTimeout(() => {
+        btn.className = "h-12 flex-1 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all";
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">verified</span><span>Guardar y Cerrar Asistencia</span>`;
+        btn.disabled = false;
+      }, 2500);
+    }, 600);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-medium"><div class="h-16 px-space-xs grid grid-cols-5 items-center"><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Inicio</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="personas" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Personas</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 h-12 transition-colors text-primary-container font-medium" data-path="reuniones" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Reuniones</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="informes" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">Informes</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ui-kit" href="#"><span class="material-symbols-outlined text-[22px]">widgets</span><span class="font-label-md text-label-md tracking-tight text-center truncate max-w-[64px]">UI Kit</span></a></div></nav></body></html>
