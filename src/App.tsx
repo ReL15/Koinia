@@ -78,14 +78,17 @@ function AppContent() {
     }
     setIsLoadingData(true);
     try {
-      const result = await apiService.getCongregationData(activeCongregationId || currentUser.congregationId);
+      const congregationId = isMasterAdmin
+        ? activeCongregationId || currentUser.congregationId
+        : currentUser.congregationId;
+      const result = await apiService.getCongregationData(congregationId);
       setData(result);
     } catch (err: any) {
       showToast(err.message || 'Error cargando datos de la congregación.', 'error');
     } finally {
       setIsLoadingData(false);
     }
-  }, [currentUser, activeCongregationId, showToast]);
+  }, [currentUser, activeCongregationId, isMasterAdmin, showToast]);
 
   const isPublisher = isPublisherOnly(currentUser);
 

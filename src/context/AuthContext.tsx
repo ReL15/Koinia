@@ -33,7 +33,7 @@ interface AuthContextType {
   isBootstrapAdmin: boolean;
   hasCongregation: boolean;
   switchCongregation: (congregationId: string) => Promise<void>;
-  refreshCongregations: () => Promise<void>;
+  refreshCongregations: (user?: UserProfile) => Promise<void>;
   loginWithEmail: (email: string, pass: string) => Promise<void>;
   loginWithDirectEmail: (email: string, password: string) => Promise<void>;
   registerWithEmail: (
@@ -65,7 +65,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isBootstrapAdmin, setIsBootstrapAdmin] = useState<boolean>(() => Boolean(currentUser?.isMasterAdmin));
   const [hasCongregation, setHasCongregation] = useState<boolean>(() => Boolean(currentUser?.congregationId));
   const [activeCongregationId, setActiveCongIdState] = useState<string>(() =>
-    getActiveCongregationId() || currentUser?.congregationId || ''
+    currentUser?.isMasterAdmin
+      ? getActiveCongregationId() || currentUser.congregationId || ''
+      : currentUser?.congregationId || ''
   );
   const [availableCongregations, setAvailableCongregations] = useState<Congregation[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(() => !currentUser);
@@ -73,22 +75,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const isRegistering = useRef(false);
 
   useEffect(() => {
-    // Si ya hay usuario en sesión directa de PostgreSQL, cargar congregaciones y omitir bloqueo
+    // Las cuentas normales siempre permanecen en su congregación asignada.
     if (currentUser) {
-      apiService
-        .getCongregationsList()
-        .then((congs) => {
-          setAvailableCongregations(congs);
-          if (currentUser.congregationId) {
-            setActiveCongIdState(currentUser.congregationId);
-            setActiveCongregationId(currentUser.congregationId);
-          } else if (congs.length > 0) {
-            setActiveCongIdState(congs[0].id);
-            setActiveCongregationId(congs[0].id);
-          }
-        })
-        .catch(console.error)
-        .finally(() => setIsLoading(false));
+      const congregationId = currentUser.isMasterAdmin
+        ? getActiveCongregationId() || currentUser.congregationId || ''
+        : currentUser.congregationId || '';
+      setActiveCongIdState(congregationId);
+      setActiveCongregationId(congregationId);
+
+      if (currentUser.isMasterAdmin) {
+        apiService
+          .getCongregationsList()
+          .then(setAvailableCongregations)
+          .catch(console.error)
+          .finally(() => setIsLoading(false));
+      } else {
+        setAvailableCongregations([]);
+        setIsLoading(false);
+      }
       return;
     }
 
@@ -108,14 +112,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setIsBootstrapAdmin(Boolean(profile.isMasterAdmin));
           setHasCongregation(Boolean(profile.congregationId));
 
-          const congId = getActiveCongregationId() || profile.congregationId;
-          if (congId) {
-            setActiveCongIdState(congId);
-            setActiveCongregationId(congId);
-          }
+          const congId = profile.isMasterAdmin
+            ? getActiveCongregationId() || profile.congregationId || ''
+            : profile.congregationId || '';
+          setActiveCongIdState(congId);
+          setActiveCongregationId(congId);
 
-          const congs = await apiService.getCongregationsList();
-          setAvailableCongregations(congs);
+          if (profile.isMasterAdmin) {
+            const congs = await apiService.getCongregationsList();
+            setAvailableCongregations(congs);
+          } else {
+            setAvailableCongregations([]);
+          }
         } catch (err: any) {
           console.error('Error sincronizando perfil de usuario:', err);
           setCurrentUser(null);
@@ -133,12 +141,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             setCurrentUser(parsed);
             setIsBootstrapAdmin(Boolean(parsed.isMasterAdmin));
             setHasCongregation(Boolean(parsed.congregationId));
-            const congId = getActiveCongregationId() || parsed.congregationId;
-            if (congId) {
-              setActiveCongIdState(congId);
-              setActiveCongregationId(congId);
+            const congId = parsed.isMasterAdmin
+              ? getActiveCongregationId() || parsed.congregationId || ''
+              : parsed.congregationId || '';
+            setActiveCongIdState(congId);
+            setActiveCongregationId(congId);
+            if (parsed.isMasterAdmin) {
+              apiService.getCongregationsList().then(setAvailableCongregations).catch(console.error);
+            } else {
+              setAvailableCongregations([]);
             }
-            apiService.getCongregationsList().then(setAvailableCongregations).catch(console.error);
           } catch {
             setCurrentUser(null);
           }
@@ -157,6 +169,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 
   const switchCongregation = async (congId: string) => {
+    if (!currentUser?.isMasterAdmin && !isBootstrapAdmin) {
+      throw new Error('Solo el Usuario Maestro puede cambiar de congregación.');
+    }
+    if (!availableCongregations.some((congregation) => congregation.id === congId)) {
+      throw new Error('La congregación seleccionada no está disponible.');
+    }
+
     setActiveCongIdState(congId);
     setActiveCongregationId(congId);
     if (currentUser) {
@@ -167,7 +186,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const refreshCongregations = async () => {
+  const refreshCongregations = async (user?: UserProfile) => {
+    const canSwitchCongregations = user
+      ? user.isMasterAdmin
+      : Boolean(currentUser?.isMasterAdmin || isBootstrapAdmin);
+    if (!canSwitchCongregations) {
+      setAvailableCongregations([]);
+      return;
+    }
+
     try {
       const list = await apiService.getCongregationsList();
       setAvailableCongregations(list);
@@ -183,6 +210,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setCurrentUser(profile);
         setIsBootstrapAdmin(Boolean(profile.isMasterAdmin));
         setHasCongregation(Boolean(profile.congregationId));
+        const congregationId = profile.isMasterAdmin
+          ? getActiveCongregationId() || profile.congregationId || ''
+          : profile.congregationId || '';
+        setActiveCongIdState(congregationId);
+        setActiveCongregationId(congregationId);
+        await refreshCongregations(profile);
       }
     } catch (err) {
       console.error('Error al recargar perfil:', err);
@@ -236,7 +269,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setActiveCongIdState(res.user.congregationId);
           setActiveCongregationId(res.user.congregationId);
         }
-        await refreshCongregations();
+        await refreshCongregations(res.user);
         return;
       } catch (directErr: any) {
         if (directErr.message && !directErr.message.includes('fetch') && !directErr.message.includes('Failed')) {
@@ -263,7 +296,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setHasCongregation(Boolean(profile.congregationId));
         setActiveCongIdState(profile.congregationId);
         setActiveCongregationId(profile.congregationId);
-        await refreshCongregations();
+        await refreshCongregations(profile);
       }
     } catch (err: any) {
       console.error('Error al registrar usuario:', err);
@@ -296,7 +329,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setActiveCongIdState(res.user.congregationId);
         setActiveCongregationId(res.user.congregationId);
       }
-      await refreshCongregations();
+      await refreshCongregations(res.user);
       return res.user;
     } catch (err: any) {
       console.error('Error al restablecer contraseña:', err);
@@ -337,7 +370,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setActiveCongIdState(res.user.congregationId);
         setActiveCongregationId(res.user.congregationId);
       }
-      await refreshCongregations();
+      await refreshCongregations(res.user);
     } catch (err: any) {
       console.error('Error al iniciar sesión con PostgreSQL:', err);
       setError(err.message || 'Error al iniciar sesión con la base de datos.');
@@ -356,6 +389,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Ignorar
     }
     setCurrentUser(null);
+    setIsBootstrapAdmin(false);
+    setHasCongregation(false);
+    setAvailableCongregations([]);
     setActiveCongregationId('');
     setActiveCongIdState('');
     setIsLoading(false);

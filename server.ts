@@ -1296,6 +1296,11 @@ app.post('/api/public/submit-report', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'userId, phone, serviceYear y monthNumber son obligatorios.' });
     }
 
+    const monthNum = parseInt(String(monthNumber), 10);
+    if (!Number.isInteger(monthNum) || monthNum < 1 || monthNum > 12) {
+      return res.status(400).json({ error: 'El mes del informe debe estar entre 1 y 12.' });
+    }
+
     const cleanUserId = String(userId).replace(/^pub-/, '');
     const reqDigits = String(phone).replace(/\D/g, '');
 
@@ -1325,7 +1330,6 @@ app.post('/api/public/submit-report', async (req: Request, res: Response) => {
       return res.status(403).json({ error: 'El número de teléfono no coincide con la ficha registrada de este publicador.' });
     }
 
-    const monthNum = parseInt(String(monthNumber), 10);
     const sYears = String(serviceYear).split('-');
     const calendarYear = monthNum >= 9 ? (parseInt(sYears[0], 10) || 2026) : (parseInt(sYears[1], 10) || 2027);
     const recId = `rec-${Date.now()}`;
@@ -1336,14 +1340,7 @@ app.post('/api/public/submit-report', async (req: Request, res: Response) => {
         shared_in_ministry, bible_courses, auxiliary_pioneer, hours, notes, updated_at
       ) VALUES ($1, $2, $2, $3, $4, $5, $6, $7, $8, $9, $10, CURRENT_TIMESTAMP)
       ON CONFLICT (user_id, service_year, month_number)
-      DO UPDATE SET
-        calendar_year = EXCLUDED.calendar_year,
-        shared_in_ministry = EXCLUDED.shared_in_ministry,
-        bible_courses = EXCLUDED.bible_courses,
-        auxiliary_pioneer = EXCLUDED.auxiliary_pioneer,
-        hours = EXCLUDED.hours,
-        notes = EXCLUDED.notes,
-        updated_at = CURRENT_TIMESTAMP
+      DO NOTHING
       RETURNING *`,
       [
         recId,
@@ -1358,6 +1355,12 @@ app.post('/api/public/submit-report', async (req: Request, res: Response) => {
         notes ? String(notes).trim() : null,
       ]
     );
+
+    if (insertRes.rows.length === 0) {
+      return res.status(409).json({
+        error: 'Ya enviaste un informe para este mes. Cada publicador solo puede enviarlo una vez.',
+      });
+    }
 
     console.log(`[PUBLIC-REPORT] Informe registrado exitosamente para ${user.full_name} (Mes: ${monthNum}, Año: ${serviceYear})`);
 

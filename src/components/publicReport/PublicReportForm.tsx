@@ -83,6 +83,7 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
 
     let isMounted = true;
     setIsCheckingReport(true);
+    setExistingRecord(null);
     apiService
       .getPublicReportStatus(publisher.id, serviceYear, monthNumber)
       .then((res) => {
@@ -173,6 +174,7 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!publisher) return;
+    if (isCheckingReport || existingRecord) return;
     setSubmitError('');
 
     if (isPioneer) {
@@ -216,6 +218,14 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
       setIsSubmittedSuccess(true);
     } catch (err: any) {
       setSubmitError(err.message || 'Error al enviar el informe. Por favor intenta de nuevo.');
+      apiService
+        .getPublicReportStatus(publisher.id, serviceYear, monthNumber)
+        .then((res) => {
+          if (res.exists && res.record) setExistingRecord(res.record);
+        })
+        .catch((statusError) => {
+          console.error('Error al verificar el informe mensual:', statusError);
+        });
     } finally {
       setIsSubmitting(false);
     }
@@ -329,13 +339,12 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
                     variant="outline"
                     size="sm"
                     onClick={() => {
-                      setIsSubmittedSuccess(false);
-                      setSubmittedDataSummary(null);
+                      handleResetPublisher();
                     }}
                     className="w-full sm:w-auto text-xs"
                   >
                     <RotateCcw className="w-3.5 h-3.5 mr-1" />
-                    Enviar otro informe
+                    Cambiar publicador
                   </Button>
                   {onBack && (
                     <Button
@@ -459,25 +468,9 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
                       </button>
                     </div>
 
-                    {/* Alerta de informe existente para este mes */}
                     {isCheckingReport && (
                       <div className="text-xs text-slate-500 text-center py-1">
                         Comprobando informe del mes seleccionado...
-                      </div>
-                    )}
-
-                    {existingRecord && !isCheckingReport && (
-                      <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
-                        <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-bold block">
-                            Ya existe un informe registrado para este mes
-                          </span>
-                          <span className="text-amber-800">
-                            Puedes modificar los datos abajo y al hacer clic en{' '}
-                            <strong>Guardar Informe</strong> se actualizará tu registro.
-                          </span>
-                        </div>
                       </div>
                     )}
 
@@ -534,6 +527,21 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
                         </div>
                       </div>
 
+                      {existingRecord && !isCheckingReport ? (
+                        <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+                          <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="font-bold block">
+                              Ya enviaste tu informe para este mes
+                            </span>
+                            <span className="text-amber-800">
+                              Cada publicador puede enviar un solo informe por mes. Selecciona otro mes
+                              si necesitas registrar un informe diferente.
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                      <>
                       {/* Selección Condicional según requerimiento oficial */}
                       <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/60 space-y-3">
                         <div className="text-xs font-bold text-slate-800">
@@ -688,15 +696,17 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
                           variant="primary"
                           size="md"
                           className="w-full py-2.5 text-sm font-bold flex items-center justify-center gap-2 shadow-md cursor-pointer"
-                          disabled={isSubmitting}
+                          disabled={isSubmitting || isCheckingReport || Boolean(existingRecord)}
                           isLoading={isSubmitting}
                         >
                           <Send className="w-4 h-4" />
                           <span>
-                            {existingRecord ? 'Actualizar Mi Informe' : 'Enviar Mi Informe'}
+                            Enviar Mi Informe
                           </span>
                         </Button>
                       </div>
+                      </>
+                      )}
                     </form>
                   </div>
                 )}
