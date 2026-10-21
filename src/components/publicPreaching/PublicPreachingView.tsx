@@ -13,7 +13,11 @@ import { ConfirmDialog } from '../common/ConfirmDialog';
 import { PublicAssignmentModal } from './PublicAssignmentModal';
 import { PublicPlaceModal } from './PublicPlaceModal';
 import { pdfGenerator } from '../../services/pdfGenerator';
-import { compareDateTimeDescending, formatTime12Hour } from '../../lib/dateUtils';
+import {
+  compareDateTimeDescending,
+  formatDurationInHours,
+  formatTime12Hour,
+} from '../../lib/dateUtils';
 import {
   Share2,
   Plus,
@@ -197,7 +201,7 @@ export const PublicPreachingView: React.FC<PublicPreachingViewProps> = ({
                         {item.date} · {formatTime12Hour(item.time)}
                       </span>
                       <span className="text-[11px] font-mono text-slate-500 tabular-nums">
-                        {item.duration} min
+                        {formatDurationInHours(item.duration)}
                       </span>
                     </div>
 
@@ -293,7 +297,7 @@ export const PublicPreachingView: React.FC<PublicPreachingViewProps> = ({
 
                 <div className="text-xs text-slate-500 space-y-1 bg-slate-50 p-2.5 rounded-lg font-mono">
                   <div>Día habitual: {place.day}</div>
-                  <div>Hora: {formatTime12Hour(place.time)} ({place.duration} min)</div>
+                  <div>Hora: {formatTime12Hour(place.time)} ({formatDurationInHours(place.duration)})</div>
                 </div>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}`}

@@ -82,6 +82,33 @@ export function formatTime12Hour(timeStr?: string): string {
   return `${displayHour}:${match[2]} ${period}`;
 }
 
+export function formatDurationInHours(durationMinutes: number): string {
+  const hours = durationMinutes / 60;
+  const formattedHours = new Intl.NumberFormat('es', {
+    maximumFractionDigits: 2,
+  }).format(hours);
+  return `${formattedHours} ${hours === 1 ? 'hora' : 'horas'}`;
+}
+
+export function formatTimeRange12Hour(
+  startTime: string,
+  durationMinutes: number
+): string | null {
+  const match = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(startTime);
+  if (!match || !Number.isInteger(durationMinutes) || durationMinutes < 0) return null;
+
+  const startMinutes = Number(match[1]) * 60 + Number(match[2]);
+  const endMinutes = startMinutes + durationMinutes;
+  const endTime = `${String(Math.floor((endMinutes % 1440) / 60)).padStart(2, '0')}:${String(
+    endMinutes % 60
+  ).padStart(2, '0')}`;
+  const daysLater = Math.floor(endMinutes / 1440);
+  const nextDayLabel =
+    daysLater === 1 ? ' (día siguiente)' : daysLater > 1 ? ` (+${daysLater} días)` : '';
+
+  return `${formatTime12Hour(startTime)} – ${formatTime12Hour(endTime)}${nextDayLabel}`;
+}
+
 export function compareDateTimeDescending(
   a: { date: string; time: string },
   b: { date: string; time: string }

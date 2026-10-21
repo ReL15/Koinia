@@ -10,7 +10,13 @@ import {
   PublicPreachingAssignment,
   Territory,
 } from '../types';
-import { compareDateTimeDescending, formatTime12Hour, getDayOfWeekName } from '../lib/dateUtils';
+import {
+  compareDateTimeDescending,
+  formatDurationInHours,
+  formatTime12Hour,
+  formatTimeRange12Hour,
+  getDayOfWeekName,
+} from '../lib/dateUtils';
 
 function addCongregationLogo(doc: jsPDF, congregation: Congregation): void {
   const logo = congregation.logoUrl;
@@ -235,13 +241,13 @@ export const pdfGenerator = {
     const doc = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
-      format: 'a4',
+      format: 'letter',
     });
 
     const pageWidth = doc.internal.pageSize.getWidth();
     const margin = 14;
 
-    doc.setFillColor(15, 76, 129); // color distintivo
+    doc.setFillColor(52, 102, 154); // color distintivo
     doc.rect(0, 0, pageWidth, 28, 'F');
     addCongregationLogo(doc, congregation);
 
@@ -249,7 +255,7 @@ export const pdfGenerator = {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(16);
     doc.text(
-      'TURNO DE PREDICACIÓN PÚBLICA ESPECIAL (CARRITOS)',
+      'Programa de Predicacion Publica',
       congregation.logoUrl ? margin + 23 : margin,
       12
     );
@@ -257,7 +263,7 @@ export const pdfGenerator = {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(10);
     doc.text(
-      `${congregation.name} · Asignaciones con 2 o 3 participantes`,
+      `${congregation.name} · Asignaciones para el mes de ${new Date().toLocaleString('es-ES', { month: 'long', year: 'numeric' })}`,
       congregation.logoUrl ? margin + 23 : margin,
       20
     );
@@ -287,19 +293,23 @@ export const pdfGenerator = {
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(10);
       doc.setTextColor(15, 23, 42);
-      doc.text(`${dayName ? `${dayName} ` : ''}${dateFormatted} · ${formatTime12Hour(item.time)} (${item.duration} min)`, margin + 4, y + 6);
+      const timeRange = formatTimeRange12Hour(item.time, item.duration);
+      const scheduleText = timeRange
+        ? `${timeRange}`
+        : `Hora no válida · ${formatDurationInHours(item.duration)}`;
+      doc.text(`${dayName ? `${dayName} ` : ''}${dateFormatted} · ${scheduleText}`, margin + 4, y + 6);
 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9);
       doc.setTextColor(30, 41, 59);
-      doc.text(`Punto: ${item.placeName}`, margin + 4, y + 11);
+      doc.text(`Lugar: ${item.placeName}`, margin + 4, y + 11);
 
       // Participantes
       const names = item.participants.map((p) => p.userName + (p.isFixed ? ' (Fijo)' : '')).join(', ');
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8.5);
       doc.setTextColor(15, 76, 129);
-      doc.text(`Participantes (${item.participants.length}): ${names}`, margin + 4, y + 16);
+      doc.text(`Participantes: ${names}`, margin + 4, y + 16);
 
       if (item.notes) {
         doc.setFont('helvetica', 'italic');
@@ -330,7 +340,7 @@ export const pdfGenerator = {
     const pageWidth = doc.internal.pageSize.getWidth();
     const margin = 14;
 
-    doc.setFillColor(30, 41, 59);
+    doc.setFillColor(52, 102, 154);
     doc.rect(0, 0, pageWidth, 28, 'F');
     addCongregationLogo(doc, congregation);
 

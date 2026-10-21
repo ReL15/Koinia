@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { compareDateTimeDescending, formatTime12Hour } from '../lib/dateUtils';
+import {
+  compareDateTimeDescending,
+  formatDurationInHours,
+  formatTime12Hour,
+  formatTimeRange12Hour,
+} from '../lib/dateUtils';
 
 describe('formatTime12Hour', () => {
   it.each([
@@ -25,5 +30,33 @@ describe('compareDateTimeDescending', () => {
       { date: '2026-10-21', time: '08:30' },
       { date: '2026-10-20', time: '09:00' },
     ]);
+  });
+});
+
+describe('formatDurationInHours', () => {
+  it.each([
+    [30, '0,5 horas'],
+    [60, '1 hora'],
+    [90, '1,5 horas'],
+    [120, '2 horas'],
+  ])('formats %i minutes as %s', (duration, expected) => {
+    expect(formatDurationInHours(duration)).toBe(expected);
+  });
+});
+
+describe('formatTimeRange12Hour', () => {
+  it('calculates the end time', () => {
+    expect(formatTimeRange12Hour('09:30', 90)).toBe('9:30 a. m. – 11:00 a. m.');
+  });
+
+  it('marks when the assignment ends the following day', () => {
+    expect(formatTimeRange12Hour('23:30', 90)).toBe(
+      '11:30 p. m. – 1:00 a. m. (día siguiente)'
+    );
+  });
+
+  it('rejects invalid times and durations', () => {
+    expect(formatTimeRange12Hour('25:00', 60)).toBeNull();
+    expect(formatTimeRange12Hour('09:00', -15)).toBeNull();
   });
 });

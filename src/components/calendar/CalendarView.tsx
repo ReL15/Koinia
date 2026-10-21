@@ -13,7 +13,11 @@ import {
   Share2,
 } from 'lucide-react';
 import { Button } from '../common/Button';
-import { compareDateTimeDescending, formatTime12Hour } from '../../lib/dateUtils';
+import {
+  compareDateTimeDescending,
+  formatDurationInHours,
+  formatTime12Hour,
+} from '../../lib/dateUtils';
 
 interface CalendarViewProps {
   congregation: Congregation;
@@ -278,7 +282,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        Duración: {item.duration} minutos
+                        Duración: {formatDurationInHours(item.duration)}
                       </div>
                     </div>
                   ))}
