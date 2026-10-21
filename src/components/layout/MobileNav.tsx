@@ -166,24 +166,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ currentTab, onSelectTab })
                 </div>
               </button>
 
-              {isPublisher ? (
-                <button
-                  onClick={() => handleSelect('mi_congregacion')}
-                  className={`w-full flex items-center gap-3.5 px-3 py-3 rounded-lg text-left text-sm transition-colors ${
-                    currentTab === 'mi_congregacion'
-                      ? 'bg-indigo-50 text-indigo-900 font-medium'
-                      : 'text-slate-700 hover:bg-slate-50'
-                  }`}
-                >
-                  <Building2 className="w-5 h-5 text-indigo-600" />
-                  <div>
-                    <span className="block font-medium">Mi Salón y Grupo</span>
-                    <span className="text-xs text-slate-500">
-                      Ubicación del salón y compañeros de grupo
-                    </span>
-                  </div>
-                </button>
-              ) : (
+              {!isPublisher && (
                 <>
                   <button
                     onClick={() => handleSelect('s21_tarjetas')}

@@ -156,21 +156,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <span>Panel de Inicio</span>
         </button>
 
-        {/* Portal del Publicador (Solo visible para publicadores) */}
-        {isPublisher && (
-          <button
-            onClick={() => onSelectTab('mi_congregacion')}
-            className={`w-full flex items-center gap-2.5 px-2.5 py-1.5 text-xs font-medium rounded-lg transition-colors text-left ${
-              currentTab === 'mi_congregacion'
-                ? 'bg-indigo-600 text-white font-semibold shadow-xs'
-                : 'text-slate-700 hover:bg-slate-100'
-            }`}
-          >
-            <Building2 className="w-4 h-4 shrink-0" />
-            <span>Mi Salón y Grupo</span>
-          </button>
-        )}
-
         {/* 1. SECCIÓN PREDICACIÓN */}
         <div>
           <button

@@ -21,6 +21,7 @@ interface PublicadorCongregationViewProps {
   publishers: UserProfile[];
   serviceGroups: ServiceGroup[];
   onOpenReport?: () => void;
+  embedded?: boolean;
 }
 
 export const PublicadorCongregationView: React.FC<PublicadorCongregationViewProps> = ({
@@ -29,6 +30,7 @@ export const PublicadorCongregationView: React.FC<PublicadorCongregationViewProp
   publishers,
   serviceGroups,
   onOpenReport,
+  embedded = false,
 }) => {
   const myGroupNumber = currentUser.serviceGroup || 1;
   const myGroup = serviceGroups.find((g) => g.groupNumber === myGroupNumber);
@@ -57,47 +59,48 @@ export const PublicadorCongregationView: React.FC<PublicadorCongregationViewProp
 
   return (
     <div className="space-y-6">
-      {/* Encabezado Principal */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-indigo-300 shrink-0">
-              <Building2 className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold tracking-tight text-white">
-                  {congregation.name}
-                </h1>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/30 text-indigo-200 border border-indigo-400/30">
-                  Portal de Consulta
-                </span>
+      {!embedded && (
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-indigo-300 shrink-0">
+                <Building2 className="w-6 h-6" />
               </div>
-              <p className="text-xs text-indigo-200/80 mt-0.5">
-                {congregation.city ? `${congregation.city} · ` : ''}
-                Circuito {congregation.circuit || 'Congregacional'} · {congregation.timezone}
-              </p>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h1 className="text-xl font-bold tracking-tight text-white">
+                    {congregation.name}
+                  </h1>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/30 text-indigo-200 border border-indigo-400/30">
+                    Portal de Consulta
+                  </span>
+                </div>
+                <p className="text-xs text-indigo-200/80 mt-0.5">
+                  {congregation.city ? `${congregation.city} · ` : ''}
+                  Circuito {congregation.circuit || 'Congregacional'} · {congregation.timezone}
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
-            {onOpenReport && (
-              <button
-                type="button"
-                onClick={onOpenReport}
-                className="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
-              >
-                <FileSpreadsheet className="w-3.5 h-3.5" />
-                <span>Enviar Mi Informe Mensual</span>
-              </button>
-            )}
-            <div className="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs text-slate-200 flex items-center gap-2 font-medium">
-              <Shield className="w-3.5 h-3.5 text-indigo-300" />
-              <span>Modo Informativo</span>
+            <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+              {onOpenReport && (
+                <button
+                  type="button"
+                  onClick={onOpenReport}
+                  className="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                >
+                  <FileSpreadsheet className="w-3.5 h-3.5" />
+                  <span>Enviar Mi Informe Mensual</span>
+                </button>
+              )}
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs text-slate-200 flex items-center gap-2 font-medium">
+                <Shield className="w-3.5 h-3.5 text-indigo-300" />
+                <span>Modo Informativo</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Grid de 2 Columnas: Salón del Reino y Mi Grupo de Servicio */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

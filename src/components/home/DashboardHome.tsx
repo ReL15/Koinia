@@ -4,6 +4,7 @@ import {
   UserProfile,
   WeeklyAssignment,
   PublicPreachingAssignment,
+  ServiceGroup,
   Territory,
   ViewTab,
 } from '../../types';
@@ -19,20 +20,26 @@ import {
   ArrowRight,
   Clock,
   User,
+  FileSpreadsheet,
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { pdfGenerator } from '../../services/pdfGenerator';
 import { imageGenerator } from '../../services/imageGenerator';
 import { getDayOfWeekName } from '../../lib/dateUtils';
+import { isPublisherOnly } from '../../services/securityRules';
+import { PublicadorCongregationView } from '../congregation/PublicadorCongregationView';
 
 interface DashboardHomeProps {
   congregation: Congregation;
   weeklyAssignments: WeeklyAssignment[];
   publicAssignments: PublicPreachingAssignment[];
   territories: Territory[];
+  publishers: UserProfile[];
+  serviceGroups: ServiceGroup[];
   onNavigate: (tab: ViewTab) => void;
   onNewWeeklyAssignment: () => void;
   onNewPublicAssignment: () => void;
+  onOpenReport: () => void;
 }
 
 export const DashboardHome: React.FC<DashboardHomeProps> = ({
@@ -40,9 +47,12 @@ export const DashboardHome: React.FC<DashboardHomeProps> = ({
   weeklyAssignments,
   publicAssignments,
   territories,
+  publishers,
+  serviceGroups,
   onNavigate,
   onNewWeeklyAssignment,
   onNewPublicAssignment,
+  onOpenReport,
 }) => {
   const {
     currentUser,
@@ -51,6 +61,7 @@ export const DashboardHome: React.FC<DashboardHomeProps> = ({
     activeCongregationId,
     switchCongregation,
   } = useAuth();
+  const isPublisher = isPublisherOnly(currentUser);
 
   // Próximos turnos personales del usuario activo
   const myWeekly = weeklyAssignments
@@ -139,6 +150,16 @@ export const DashboardHome: React.FC<DashboardHomeProps> = ({
             <ImageIcon className="w-4 h-4 mr-1.5" />
             Exportar Imagen
           </Button>
+          {isPublisher && (
+            <Button
+              size="sm"
+              onClick={onOpenReport}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white"
+            >
+              <FileSpreadsheet className="w-4 h-4 mr-1.5" />
+              Enviar Mi Informe Mensual
+            </Button>
+          )}
           {currentUser?.role !== 'PUBLICADOR' && (
             <Button size="sm" onClick={onNewWeeklyAssignment}>
               <Plus className="w-4 h-4 mr-1.5" />
@@ -147,6 +168,16 @@ export const DashboardHome: React.FC<DashboardHomeProps> = ({
           )}
         </div>
       </div>
+
+      {isPublisher && currentUser && (
+        <PublicadorCongregationView
+          congregation={congregation}
+          currentUser={currentUser}
+          publishers={publishers}
+          serviceGroups={serviceGroups}
+          embedded
+        />
+      )}
 
       {/* Mis Próximos Turnos (Crucial para teléfonos móviles y publicadores) */}
       <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">

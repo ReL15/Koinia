@@ -29,7 +29,6 @@ import { S21View } from './components/s21/S21View';
 import { CalendarAndReportsView } from './components/s21/CalendarAndReportsView';
 import { NeonConsolePanel } from './components/s21/NeonConsolePanel';
 import { CongregationDetailsView } from './components/congregation/CongregationDetailsView';
-import { PublicadorCongregationView } from './components/congregation/PublicadorCongregationView';
 import { PublicReportForm } from './components/publicReport/PublicReportForm';
 import { isPublisherOnly } from './services/securityRules';
 import { Building2, LogOut } from 'lucide-react';
@@ -112,9 +111,15 @@ function AppContent() {
         'datos_congregacion',
       ].includes(currentTab)
     ) {
-      setCurrentTab('mi_congregacion');
+        setCurrentTab('inicio');
     }
   }, [isPublisher, currentTab]);
+
+  useEffect(() => {
+    if (currentTab === 'mi_congregacion') {
+        setCurrentTab('inicio');
+    }
+  }, [currentTab]);
 
   if (showPublicReport) {
     return (
@@ -256,9 +261,12 @@ function AppContent() {
               weeklyAssignments={data.weeklyAssignments}
               publicAssignments={data.publicAssignments}
               territories={data.territories}
+              publishers={data.users}
+              serviceGroups={data.serviceGroups || []}
               onNavigate={setCurrentTab}
               onNewWeeklyAssignment={() => setCurrentTab('programa')}
               onNewPublicAssignment={() => setCurrentTab('publica')}
+              onOpenReport={() => setShowPublicReport(true)}
             />
           )}
 
@@ -394,16 +402,6 @@ function AppContent() {
                 await loadData();
                 showToast('Datos del salón actualizados.');
               }}
-            />
-          )}
-
-          {currentTab === 'mi_congregacion' && (
-            <PublicadorCongregationView
-              congregation={data.congregation}
-              currentUser={currentUser}
-              publishers={data.users}
-              serviceGroups={data.serviceGroups || []}
-              onOpenReport={() => setShowPublicReport(true)}
             />
           )}
 
