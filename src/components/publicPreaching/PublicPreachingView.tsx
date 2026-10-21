@@ -13,6 +13,7 @@ import { ConfirmDialog } from '../common/ConfirmDialog';
 import { PublicAssignmentModal } from './PublicAssignmentModal';
 import { PublicPlaceModal } from './PublicPlaceModal';
 import { pdfGenerator } from '../../services/pdfGenerator';
+import { compareDateTimeDescending, formatTime12Hour } from '../../lib/dateUtils';
 import {
   Share2,
   Plus,
@@ -64,7 +65,7 @@ export const PublicPreachingView: React.FC<PublicPreachingViewProps> = ({
         a.placeName.toLowerCase().includes(search.toLowerCase()) ||
         a.participants.some((p) => p.userName.toLowerCase().includes(search.toLowerCase()))
     )
-    .sort((a, b) => a.date.localeCompare(b.date));
+    .sort(compareDateTimeDescending);
 
   const handleOpenCreate = () => {
     setEditingItem(null);
@@ -193,7 +194,7 @@ export const PublicPreachingView: React.FC<PublicPreachingViewProps> = ({
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs font-bold text-slate-900 font-mono tabular-nums">
-                        {item.date} · {item.time}
+                        {item.date} · {formatTime12Hour(item.time)}
                       </span>
                       <span className="text-[11px] font-mono text-slate-500 tabular-nums">
                         {item.duration} min
@@ -292,7 +293,7 @@ export const PublicPreachingView: React.FC<PublicPreachingViewProps> = ({
 
                 <div className="text-xs text-slate-500 space-y-1 bg-slate-50 p-2.5 rounded-lg font-mono">
                   <div>Día habitual: {place.day}</div>
-                  <div>Hora: {place.time} ({place.duration} min)</div>
+                  <div>Hora: {formatTime12Hour(place.time)} ({place.duration} min)</div>
                 </div>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}`}

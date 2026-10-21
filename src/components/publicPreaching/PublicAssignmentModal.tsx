@@ -8,6 +8,7 @@ import {
 import { Modal } from '../common/Modal';
 import { Button } from '../common/Button';
 import { validatePublicPreachingParticipants, detectPublicConflicts } from '../../services/securityRules';
+import { formatTime12Hour } from '../../lib/dateUtils';
 import { AlertCircle, UserPlus, X, AlertTriangle } from 'lucide-react';
 
 interface PublicAssignmentModalProps {
@@ -222,7 +223,7 @@ export const PublicAssignmentModal: React.FC<PublicAssignmentModalProps> = ({
             <option value="">Selecciona el punto de carrito...</option>
             {activePlaces.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.name} ({p.day} a las {p.time})
+                {p.name} ({p.day} a las {formatTime12Hour(p.time)})
               </option>
             ))}
           </select>

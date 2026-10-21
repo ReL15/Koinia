@@ -70,3 +70,21 @@ export function formatDateLongWithDay(dateStr?: string): string {
   const year = parts[0];
   return `${dayName}, ${day} de ${monthName} de ${year}`;
 }
+
+export function formatTime12Hour(timeStr?: string): string {
+  if (!timeStr) return '';
+  const match = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(timeStr);
+  if (!match) return timeStr;
+
+  const hour = Number(match[1]);
+  const displayHour = hour % 12 || 12;
+  const period = hour < 12 ? 'a. m.' : 'p. m.';
+  return `${displayHour}:${match[2]} ${period}`;
+}
+
+export function compareDateTimeDescending(
+  a: { date: string; time: string },
+  b: { date: string; time: string }
+): number {
+  return b.date.localeCompare(a.date) || b.time.localeCompare(a.time);
+}

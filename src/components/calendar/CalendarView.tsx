@@ -13,6 +13,7 @@ import {
   Share2,
 } from 'lucide-react';
 import { Button } from '../common/Button';
+import { compareDateTimeDescending, formatTime12Hour } from '../../lib/dateUtils';
 
 interface CalendarViewProps {
   congregation: Congregation;
@@ -75,6 +76,10 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
     publicAssignments.forEach((p) => {
       if (!map[p.date]) map[p.date] = { weekly: [], publicShifts: [] };
       map[p.date].publicShifts.push(p);
+    });
+
+    Object.values(map).forEach(({ publicShifts }) => {
+      publicShifts.sort(compareDateTimeDescending);
     });
 
     return map;
@@ -188,9 +193,9 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                             ? 'bg-sky-800 text-sky-100'
                             : 'bg-sky-50 text-sky-800 font-medium border border-sky-100'
                         }`}
-                        title={`Carrito: ${p.placeName} (${p.time})`}
+                        title={`Carrito: ${p.placeName} (${formatTime12Hour(p.time)})`}
                       >
-                        {p.time} Carrito
+                        {formatTime12Hour(p.time)} Carrito
                       </div>
                     ))}
                   </div>
@@ -264,7 +269,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                     >
                       <div className="flex items-center justify-between font-semibold text-slate-900">
                         <span>{item.placeName}</span>
-                        <span className="font-mono tabular-nums">{item.time}</span>
+                        <span className="font-mono tabular-nums">{formatTime12Hour(item.time)}</span>
                       </div>
                       <div className="text-slate-600">
                         <span>Participantes: </span>

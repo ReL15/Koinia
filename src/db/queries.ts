@@ -1112,7 +1112,8 @@ export async function getPublicAssignmentsList(
     const rows = await db
       .select()
       .from(publicPreachingAssignments)
-      .where(eq(publicPreachingAssignments.congregationId, congregationId));
+      .where(eq(publicPreachingAssignments.congregationId, congregationId))
+      .orderBy(desc(publicPreachingAssignments.date), desc(publicPreachingAssignments.time));
 
     return rows.map((r) => ({
       id: r.id,

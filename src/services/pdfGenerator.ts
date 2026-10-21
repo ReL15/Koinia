@@ -10,7 +10,7 @@ import {
   PublicPreachingAssignment,
   Territory,
 } from '../types';
-import { getDayOfWeekName } from '../lib/dateUtils';
+import { compareDateTimeDescending, formatTime12Hour, getDayOfWeekName } from '../lib/dateUtils';
 
 function addCongregationLogo(doc: jsPDF, congregation: Congregation): void {
   const logo = congregation.logoUrl;
@@ -263,7 +263,7 @@ export const pdfGenerator = {
     );
 
     let y = 38;
-    const sorted = [...assignments].sort((a, b) => a.date.localeCompare(b.date));
+    const sorted = [...assignments].sort(compareDateTimeDescending);
 
     sorted.forEach((item, index) => {
       if (y > 260) {
@@ -287,7 +287,7 @@ export const pdfGenerator = {
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(10);
       doc.setTextColor(15, 23, 42);
-      doc.text(`${dayName ? `${dayName} ` : ''}${dateFormatted} · ${item.time} (${item.duration} min)`, margin + 4, y + 6);
+      doc.text(`${dayName ? `${dayName} ` : ''}${dateFormatted} · ${formatTime12Hour(item.time)} (${item.duration} min)`, margin + 4, y + 6);
 
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9);

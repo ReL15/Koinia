@@ -25,7 +25,11 @@ import {
 import { Button } from '../common/Button';
 import { pdfGenerator } from '../../services/pdfGenerator';
 import { imageGenerator } from '../../services/imageGenerator';
-import { getDayOfWeekName } from '../../lib/dateUtils';
+import {
+  compareDateTimeDescending,
+  formatTime12Hour,
+  getDayOfWeekName,
+} from '../../lib/dateUtils';
 import { isPublisherOnly } from '../../services/securityRules';
 import { PublicadorCongregationView } from '../congregation/PublicadorCongregationView';
 
@@ -70,7 +74,7 @@ export const DashboardHome: React.FC<DashboardHomeProps> = ({
 
   const myPublic = publicAssignments
     .filter((p) => p.participants.some((part) => part.userId === currentUser?.id))
-    .sort((a, b) => a.date.localeCompare(b.date));
+    .sort(compareDateTimeDescending);
 
   // Próximas salidas generales ordenadas
   const upcomingWeekly = [...weeklyAssignments]
@@ -282,7 +286,7 @@ export const DashboardHome: React.FC<DashboardHomeProps> = ({
                   <div className="flex items-center justify-between text-xs text-sky-800 mb-1">
                     <span className="font-semibold">Predicación Pública (Carrito)</span>
                     <span className="font-mono tabular-nums">
-                      {item.date} · {item.time}
+                      {item.date} · {formatTime12Hour(item.time)}
                     </span>
                   </div>
                   <h3 className="text-sm font-semibold text-slate-900">{item.placeName}</h3>
