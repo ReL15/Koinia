@@ -69,7 +69,7 @@ export const PublicPreachingView: React.FC<PublicPreachingViewProps> = ({
         a.placeName.toLowerCase().includes(search.toLowerCase()) ||
         a.participants.some((p) => p.userName.toLowerCase().includes(search.toLowerCase()))
     )
-    .sort(compareDateTimeDescending);
+    .sort((a, b) => compareDateTimeDescending(b, a));
 
   const handleOpenCreate = () => {
     setEditingItem(null);

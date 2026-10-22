@@ -269,7 +269,7 @@ export const pdfGenerator = {
     );
 
     let y = 38;
-    const sorted = [...assignments].sort(compareDateTimeDescending);
+    const sorted = [...assignments].sort((a, b) => compareDateTimeDescending(b, a));
 
     sorted.forEach((item, index) => {
       if (y > 260) {
