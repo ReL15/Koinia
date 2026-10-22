@@ -251,7 +251,7 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
 
           <div className="flex items-center gap-1.5 text-xs text-slate-500">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Formulario Oficial S-21</span>
+            <span>Registro de actividad</span>
           </div>
         </div>
 
@@ -261,7 +261,7 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
           <div className="bg-slate-900 text-white p-5 sm:p-6 border-b border-slate-800">
             <div className="flex items-center gap-2 mb-1">
               <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-semibold">
-                Sin contraseña requerida
+                Acceso Directo
               </span>
               <span className="text-[10px] uppercase font-semibold text-emerald-400">
                 · Detección Automática
@@ -717,7 +717,7 @@ export const PublicReportForm: React.FC<PublicReportFormProps> = ({ onBack }) =>
 
         {/* Pie de página con aviso de privacidad y soporte */}
         <div className="mt-6 text-center text-xs text-slate-500 space-y-1">
-          <p>Organización de la Predicación Congregacional · Ficha Oficial S-21</p>
+          <p>Organización de la Predicación</p>
           <p className="text-[11px] text-slate-400">
             Los datos enviados se guardan de forma segura y solo pueden ser consultados por el
             secretario y los ancianos de tu congregación.

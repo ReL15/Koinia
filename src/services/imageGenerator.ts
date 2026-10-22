@@ -342,7 +342,7 @@ export const imageGenerator = {
 
     ctx.fillStyle = '#94a3b8';
     ctx.font = '11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText('Organización de Predicación Congregacional · Documento oficial de servicio', cardX + 28, currentY + 29);
+    ctx.fillText('Organización de Predicación · Documento oficial de servicio', cardX + 28, currentY + 29);
 
     // Descargar como archivo PNG
     return new Promise<void>((resolve, reject) => {

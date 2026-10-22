@@ -256,7 +256,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <BarChart3 className="w-4 h-4 text-blue-600" />
                   <div>
                     <div className="font-medium">Informes y Totales Anuales</div>
-                    <div className="text-[10px] text-slate-400">Resumen congregacional del año de servicio</div>
+                    <div className="text-[10px] text-slate-400">Resumen del año de servicio</div>
                   </div>
                 </button>
                 <button

@@ -55,7 +55,7 @@ export const PlacesView: React.FC<PlacesViewProps> = ({ places, onSavePlace, cit
             Lugares de Salida
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
-            Puntos habituales de reunión para la predicación congregacional
+            Puntos habituales de reunión para la predicación
           </p>
         </div>
 

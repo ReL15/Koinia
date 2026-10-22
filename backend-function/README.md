@@ -1,6 +1,6 @@
 # Guía de Despliegue de Appwrite Function
 
-Este directorio contiene la función de backend serverless para el **Organizador de la Predicación Congregacional**.
+Este directorio contiene la función de backend serverless para el **Organizador de la Predicación**.
 
 ## 1. Requisitos en Appwrite Console
 

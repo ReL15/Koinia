@@ -94,7 +94,7 @@ async function setupDatabase() {
       await db.createCollection(
         databaseId,
         collectionId,
-        'Registros Congregacionales',
+        'Registros de Congregación',
         [], // Sin acceso público directo; acceso solo mediante la Function con API Key
         false
       );

@@ -128,7 +128,7 @@ export const CalendarAndReportsView: React.FC<CalendarAndReportsViewProps> = ({ 
             Desglose Mensual de la Congregación
           </span>
           <span className="text-[11px] text-slate-400">
-            Formulario de Informe Mensual Congregacional
+            Formulario de Informe Mensual de la Congregacion
           </span>
         </div>
 

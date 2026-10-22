@@ -521,7 +521,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           <div className="flex items-center gap-2">
             <History className="w-4 h-4 text-slate-700" />
             <h2 className="text-sm font-semibold text-slate-900">
-              Bitácora de Auditoría Congregacional
+              Bitácora de Auditoría de la congregación
             </h2>
           </div>
           <span className="text-xs text-slate-500 font-mono tabular-nums">

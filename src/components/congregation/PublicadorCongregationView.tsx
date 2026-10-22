@@ -117,7 +117,7 @@ export const PublicadorCongregationView: React.FC<PublicadorCongregationViewProp
                     Salón del Reino de los Testigos de Jehová
                   </h2>
                   <span className="text-[11px] text-slate-500">
-                    Ubicación oficial de las reuniones congregacionales
+                    Ubicación oficial de las reuniones de la congregacion
                   </span>
                 </div>
               </div>
